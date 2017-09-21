@@ -1,0 +1,47 @@
+\documentclass[a4paper]{article}
+
+\input{./preamble/info.tex}
+
+\input{./preamble/packages.tex}
+
+\DeclareGraphicsExtensions{.pdf, .png, .jpg} % Se due immagini hanno lo stesso nome sceglile secondo l'ordine di filetype qui
+
+\input{./preamble/macros.tex}
+
+
+%////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+%////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+% Fine dei dati iniziali per il latex: il documento finale inizierà da qui
+\begin{document}
+
+\include{./section/relation_title}
+
+
+\vspace{ \stretch{1} }
+\noindent
+\include{./section/abstract}
+
+\blankpage
+
+
+\microtypesetup{protrusion=false} % disables protrusion locally in the document
+\tableofcontents % prints Table of Contents
+\microtypesetup{protrusion=true} % enables protrusion
+
+\blankpage
+
+\include{section/chapters}
+
+\clearpage
+
+\begin{appendix}
+\include{./section/appendix}
+\end{appendix}
+
+\clearpage
+
+\include{./section/bibliography}
+
+\include{./section/code}
+
+\end{document}

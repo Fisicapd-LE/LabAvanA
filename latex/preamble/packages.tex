@@ -1,0 +1,8 @@
+\usepackage{iftex}
+\ifLuaTeX
+  \input{preamble/packages/packages_lualatex.tex}
+\else
+  \input{preamble/packages/packages_pdflatex.tex}
+\fi
+
+\input{preamble/packages/packages_general.tex}
