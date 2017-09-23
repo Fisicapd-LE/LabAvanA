@@ -1,0 +1,62 @@
+\section{Analisi dati}
+Dato che per completare l'esperimento si ha bisogno di ancora un semestre di lavoro, non si hanno al momento a disposizione dati relativi al reale obiettivo dell'esperimento
+(per esempio alla misura del fattore di Landè dei muoni o al tempo di decadimento dei muoni), ma si hanno dati sulla caratterizzazione di parte del sistema di acquisizione,
+in particolare sulla caratterizzazione dei SiPM e sulla misura di efficienza dei rivelatori.
+
+\subsection{Caratterizzazione dei fotodiodi}
+I SiPM sono stati caratterizzati in due modi. Si è prima studiata la caratteristica tensione corrente (solo per il primo modello della scheda, in quanto nelle versioni successive l'ingresso del bias, su cui \`e necessario agire per la misura, non e' piu' in un cavo independente, ma unito agli altri e quindi di difficile accesso). Trovando la curva, e' possibile vedere a che tensione si innesca il meccanicmo del breakdown, ovvero a che tensione il diodo diventa operativo come rivelatore.
+In seguito si è studiata la variazione del parametro di guadagno per ogni fotone al variare del voltaggio di bias per ogni fotodiodo utilizzato. Il guadagno infatti si prevede essere proporzionale alla sovrattensione rispetto al breakdown. Estrapolando i dati fino a guadagno 0, si puo' ottenere un'altra stima della tensione di breakdown, che non ha bisogno stavolta dell'accesso all'ingresso di bias. Questo metodo e' percio' stato usato nei seguenti rivelatori
+
+\subsubsection{Studio della caratteristica tensione corrente}
+Per studiare tale caratteristica si è utilizzato un picoamperometro collegato al diodo: esso permette, in maniera simile a quanto viene fatto dai multimetri commerciali
+impostati come ohmetri, di fornire una ben definita tensione e di misurare la corrente che attraversa l'oggetto generata da questa tensione. Quindi,
+non si è fatto altro che mettere la PCB al buio (in modo da non rilevare una quantità troppo elevata di fotoni esterni quando si dà una tensione di bias al diodo),
+collegare il picoamperometro al diodo e studiare come varia la corrente al variare della tensione fornita, ottenendo la curva caratteristica del diodo nelle sue tre diverse
+sezioni: quella del voltaggio diretto, dello spegnimento e del breakdown; quest'ultima risulta particolarmente interessante in quanto è in questa regione che funzioneranno
+i diodi unaa volta collegato tutto l'esperimento. Le curve di caratterizzazione si possono vedere nel Grafici \ref{gr:} e \ref{gr:} per due dei diodi utilizzati
+%!!!!!!!!!INSERIRE GRAFICI CARATTERIZZAZIONE IV DEI DIODI E POI METTERE IL NOME SUL REF ALLA RIGA SOPRA!!!!!!!!!!!!
+
+Partendo da questi grafici si possono studiare diverse caratteristiche del fotodiodo, per esempio andando a considerare solamente i punti raccolti per voltaggi oltre
+il voltaggio di breakdown si può andare a interpolare tali dati con una retta ottenendo così la conduttanza equivalente del circuito quando il diodo è in breakdown.
+%!!!!!!!!!INSERIRE GRAFICI PER PARTE IN BREAKDOWN E VALORE CONDUTTANZA PER I GRAFICI CHE SI HANNO!!!!!!!!!!!!!!!
+
+
+\subsubsection{Studio dell'amplificazione dei fotodiodi}
+Molto importtante per la regolazione del voltaggio di bias per i singoli fotodiodi è sapere esattamente il voltaggio di breakdown di tali diodi e a quale variazione di
+voltaggio sia associato l'assorbimento di un fotone da parte di un fotodiodo. Per fare questo si è alimentato l'operazionale nella scheda contenente il fotodiodo, tale
+scheda è stata messa al buio, e si è collegato il bias del fotodiodo al generatore di tensione, e l'output all'oscilloscopio. Quindi, si è fatta variare la tensione
+di bias del fotodiodo e si sono raccolti un numero fisso di dati, come quelli che si possono vedere nel Grafico \ref{gr:}, che è uno dei tanti grafici che sono stati
+%!!!!!!!!!!!!!!!!INSERIRE GRAFICO CON ESEMPIO SERIE GAUSSIANE; SISTEMARE REF E DATI POSO SOPRA!!!!!!!!!!!!!
+trovati per studiare l'amplificazione dei fotodiodi. Da questo grafico è evidente come ci sono diverse gaussiane ben distinte, ad indicare che si vede il voltaggio
+generato da un numero crescente di fotoni (infatti la gaussiana a voltaggio più basso sarà quella legata a un fotone, quella più a sinistra due fotoni eccetera).
+I segnali rivelati sono dovuti sia fotoni termici, cioè eccitazioni casuali nel semiconduttore che forma il diodo che vengono lette dal sistema come se fosse stato assorbito un fotone
+da tale diodo, sia fotoni residui che sono riusciti a passare attravero la schermatura. Grafici di questo tipo sono stati interpolati al variare della tensione di bias per ogni diodo con una funzione del tipo:
+
+\begin{equation}
+	{\cal N}\cdot\sum_{i=0}^{n}f_{\mathrm{poisson}}\left(i;\alpha\right)\cdot f_{\mathrm{gauss}}\left(x; d + G\cdot i, \sigma_i\right)
+	\label{eq:segnale_buio}
+\end{equation}
+
+Dove "${\cal N}$" indica un coefficiente di normalizzazione, "n" e' il numero di picchi visibili nel grafico, "i" \`e un indice che scorre sul numero di picchi, "$\alpha$" e' il parametro della poissoniana, "d" e' la media della prima gaussiana, le "$\sigma_i$" sono le sigma dei picchi e "G" e' il guadagno, il paramentro che ci interessa in questo fit. Questa equazione deriva dal fatto che il numero di fotoni rilevati, veri o termici che siano, obbedisce alla probabilit\`a poissoniana, mentre il segnale generato da un singolo fotone \`e gaussiano, a causa delle risoluzione finita del sistema scintillatore SiPM.\\
+
+Mettendo assieme tutti i grafici per ogni diodo si ottengono delle rette che descrivono il variare dell'amplificazione (cioè in pratica del voltaggio per fotone) al variare
+della tensione di bias. Questi grafici si possono vedere in questa sezione, e nella Tabella \ref{tab:} si possono vedere riassunti i risultati per ogni diodo.
+%!!!!!!!!!!!!!METTERE GRAFICI RETTTA AL VARIARE DEL VOLTAGGIO E TABELLA CON RISULTATI PER TUTTI I DIODI STUDIATI!!!!!!!!!!!!!
+
+\subsection{Stima dell'efficienza dell'apparato}
+\`E stata fatta una seconda serie di misure per poter discutere dell'efficienza del sistema di acquisizione. In queste misure il rivelatore \`e stato posto all'interno del solenoide, insieme a quelli gi\`a analizzati dal gruppo dell'anno precendente. Collegando i tre rivelatori precendenti al generatore di coincidenze, si sono fatte misure del segnale rilevato dallo scintillatore in esame in corrispondenza con il passaggio di un muone reale, indicato dalla presenza del segnale in tutti e tre gli altri. Dato l'elevato numero di rivelatori in coincidenza (4, dato che il rivelatore centrale contiene due SiPM funzionanti, mentre i due estremali solo 1), ci si aspetta che il numero di coincidenze casuali sia molto piccolo.
+
+I risultati ottenuti si possono vedere nelle Immagini \ref{gr:d1@eff_full} e \ref{gr:d2@eff_full}
+
+%!!!!!!!!!!!!GRAFICO LANDAU!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+In questo grafico e' stata anche fatto un fit con una funzione di Landau, in modo da ottenere i parametri del sengale lasciato da un MIP (minimum ionization particle), che con la nostra configurazione di rivelatori lascia con probabilita' massima 7 fotoni.
+
+Per confronto, su uno dei due diodi si sono fatte anche misure togliendo uno alla volta i rivelatori in coicidenza. Si puo' vedere come togliendo un solo segnale di coincidenza la differenza non e' molta, le due efficienze sono compatibili, mentre togliendone due crolla al 30\%. Questo \`e perch\'e con soli due rivelatori in coicidenza c'\`e una probabilit\`a non trascurabile che due segnali termici siano avvenuti contemporaneamente, simulando un muone che non e' mai passato per il rivelatore in esame.
+
+Per analizzare anche questa possibilit\`a si sono fatte ulteriori misure cambiando la lunghezza temporale della finestra nella quale due segnali sono considerati in coicidenza, prima con due, poi con quattro rivelatori in coincidenza. I risultati sono visibili nelle Immagini \ref{gr:2riv@eff_sign_length_riv1} e \ref{gr:4riv@eff_sign_length_riv1} e nelle Tabelle \ref{tab:4riv_sign_length_riv1} e \ref{tab:2riv_sign_length_riv1}.
+Come si puo' vedere, nel caso con 4 rivelatori non c'e' praticamente differenza tra le efficienze, mentre nel caso con 2 rivelatori c'\`e una dipendenza quadratica dalla lunghezza del segnale. L'efficienza reale \`e comunque ottenibile attraverso un estrapolazione, in quanto nel limite della lunghezza che tende a 0 la probabilit\`a che due segnali non correlati diano coincidenza tende a 0.
+
+Il procedimento \`e stato poi ripetuto per il secondo rivelatore costruito, ottendendo i risultati di Immagini \ref{gr:2riv@eff_sign_length_riv2} e \ref{gr:4riv@eff_sign_length_riv2} e nelle Tabelle \ref{tab:4riv_sign_length_riv2} e \ref{tab:2riv_sign_length_riv2}.
+
+Le efficienze calcolate non sono compatibili con il 100\%, ma in una sezione successiva si mostrer\`a come questo dipenda da un solo fattore geometrico.

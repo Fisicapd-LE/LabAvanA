@@ -5,6 +5,7 @@ import sys
 
 def img_to_latex(name, folder, ext):
 	cleanName = cleanup.cleanup(name)
+	prefix = {"graph": "gr", "img": "img"}
 	f = open("latex/" + folder + "/" + cleanName + ".tex", "w")
 	try:
 		caption = open("raw/" + folder + "/" + cleanName + ".txt", "r").readlines()
@@ -21,7 +22,7 @@ def img_to_latex(name, folder, ext):
 	else:
 		f.write("\\includegraphics[width=0.9\\textwidth]{../raw/" + folder + "/" + cleanName + ext + "}\n")
 	f.write("\\caption{" + caption + "}\n")
-	f.write("\\label{gr:" + cleanName + "}\n")
+	f.write("\\label{" + prefix[folder] + ":" + cleanName + "}\n")
 	if not cleanup.flags["sub"]:
 		f.write("\\end{figure}")
 	else:

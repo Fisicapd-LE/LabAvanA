@@ -82,6 +82,12 @@ appendix: ./latex/section/appendix.tex
 code: ./latex/section/code.tex
 	script/compose/chapters.sh "code"
 	
+publish:
+	if [ -f info/publish ]; \
+	then \
+		cp latex/Relazione.pdf $(shell cat info/publish); \
+	fi;
+	
 
 # clean ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 clean: | cleanlog clean_preamble clean_graphs clean_imgs clean_tables
