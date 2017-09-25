@@ -1,5 +1,5 @@
 \begin{center}
-\begin{tabulary}{\textwidth}{CCCCCC}
+\begin{tabulary}{\textwidth}{$cols}
 \toprule
 $titleline \\ \midrule\midrule
 $tbody

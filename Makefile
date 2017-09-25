@@ -50,7 +50,7 @@ IMGS_COMPOSED_BASE = $(call uniq,$(call extract_composed,img))
 IMGS_COMPOSED = $(foreach img,$(IMGS_COMPOSED_BASE),latex/img/$(img).tex)
 
 TABLES_BASE = $(call extract_raw,table)
-TABLES = $(call uniq,$(foreach table,$(TABLES_BASE),latex/img/$(table).tex))
+TABLES = $(call uniq,$(foreach table,$(TABLES_BASE),latex/table/$(table).tex))
 
 
 
@@ -128,7 +128,7 @@ clean_preamble:
 .SECONDEXPANSION:
 # media ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-media: graph img
+media: graph img table
 
 
 graph: | graphlog $(GRAPHS) $(GRAPHS_COMPOSED)
@@ -142,6 +142,7 @@ $(GRAPHS): latex/graph/%.tex: $$(call img_candidate,graph,%) $$(wildcard raw/gra
 	
 $(GRAPHS_COMPOSED): latex/graph/%.tex: $$(call compose_dependency,graph,%) $$(wildcard raw/graph/%.txt) script/to_latex/compose_img.py
 	$(call echolog,"Composing $*...")
+	echo $(call compose_dependency,graph,$*)
 	script/to_latex/compose_img.py $* graph $(foreach name,$(call compose_dependency,graph,$*),$(call strip_name,$(name)))
 	
 clean_graphs:
@@ -174,7 +175,7 @@ table: | tablelog $(TABLES)
 tablelog:
 	$(call echolog,"Formatting tables...")
 	
-$(TABLES): latex/table/%.tex: raw/table/%.dat $$(wildcard raw/imgs/%.txt) script/to_latex/cleanup.py script/to_latex/table.py
+$(TABLES): latex/table/%.tex: raw/table/%.dat $$(wildcard raw/table/%.txt) script/to_latex/cleanup.py script/to_latex/table.py aux/table
 	$(call echolog,"Formatting $*...")
 	script/to_latex/table.py $*
 	

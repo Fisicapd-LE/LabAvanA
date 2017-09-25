@@ -25,10 +25,10 @@ il voltaggio di breakdown si può andare a interpolare tali dati con una retta o
 Molto importtante per la regolazione del voltaggio di bias per i singoli fotodiodi è sapere esattamente il voltaggio di breakdown di tali diodi e a quale variazione di
 voltaggio sia associato l'assorbimento di un fotone da parte di un fotodiodo. Per fare questo si è alimentato l'operazionale nella scheda contenente il fotodiodo, tale
 scheda è stata messa al buio, e si è collegato il bias del fotodiodo al generatore di tensione, e l'output all'oscilloscopio. Quindi, si è fatta variare la tensione
-di bias del fotodiodo e si sono raccolti un numero fisso di dati, come quelli che si possono vedere nel Grafico \ref{gr:}, che è uno dei tanti grafici che sono stati
-%!!!!!!!!!!!!!!!!INSERIRE GRAFICO CON ESEMPIO SERIE GAUSSIANE; SISTEMARE REF E DATI POSO SOPRA!!!!!!!!!!!!!
+di bias del fotodiodo e si sono raccolti un numero fisso di dati, come quelli che si possono vedere nel Grafico \ref{gr:6lemo_d1_305.root}, che è uno dei tanti grafici che sono stati
+\inputgraph{6lemo_d1_gain_305}
 trovati per studiare l'amplificazione dei fotodiodi. Da questo grafico è evidente come ci sono diverse gaussiane ben distinte, ad indicare che si vede il voltaggio
-generato da un numero crescente di fotoni (infatti la gaussiana a voltaggio più basso sarà quella legata a un fotone, quella più a sinistra due fotoni eccetera).
+generato da un numero crescente di fotoni (infatti la gaussiana a voltaggio più basso sarà quella legata a un fotone, quella alla sua sinistra due fotoni eccetera).
 I segnali rivelati sono dovuti sia fotoni termici, cioè eccitazioni casuali nel semiconduttore che forma il diodo che vengono lette dal sistema come se fosse stato assorbito un fotone
 da tale diodo, sia fotoni residui che sono riusciti a passare attravero la schermatura. Grafici di questo tipo sono stati interpolati al variare della tensione di bias per ogni diodo con una funzione del tipo:
 
@@ -40,8 +40,10 @@ da tale diodo, sia fotoni residui che sono riusciti a passare attravero la scher
 Dove "${\cal N}$" indica un coefficiente di normalizzazione, "n" e' il numero di picchi visibili nel grafico, "i" \`e un indice che scorre sul numero di picchi, "$\alpha$" e' il parametro della poissoniana, "d" e' la media della prima gaussiana, le "$\sigma_i$" sono le sigma dei picchi e "G" e' il guadagno, il paramentro che ci interessa in questo fit. Questa equazione deriva dal fatto che il numero di fotoni rilevati, veri o termici che siano, obbedisce alla probabilit\`a poissoniana, mentre il segnale generato da un singolo fotone \`e gaussiano, a causa delle risoluzione finita del sistema scintillatore SiPM.\\
 
 Mettendo assieme tutti i grafici per ogni diodo si ottengono delle rette che descrivono il variare dell'amplificazione (cioè in pratica del voltaggio per fotone) al variare
-della tensione di bias. Questi grafici si possono vedere in questa sezione, e nella Tabella \ref{tab:} si possono vedere riassunti i risultati per ogni diodo.
-%!!!!!!!!!!!!!METTERE GRAFICI RETTTA AL VARIARE DEL VOLTAGGIO E TABELLA CON RISULTATI PER TUTTI I DIODI STUDIATI!!!!!!!!!!!!!
+della tensione di bias. Questi grafici si possono vedere in questa sezione, e nelle Tabelle \ref{tab:6lemo_gain} e \ref{tab:6lemo_breakdown} si possono vedere riassunti i risultati per ogni diodo.
+\inputgraph{6lemo_gain}
+\inputtab{6lemo_gain}
+\inputtab{6lemo_breakdown}
 
 \subsection{Stima dell'efficienza dell'apparato}
 \`E stata fatta una seconda serie di misure per poter discutere dell'efficienza del sistema di acquisizione. In queste misure il rivelatore \`e stato posto all'interno del solenoide, insieme a quelli gi\`a analizzati dal gruppo dell'anno precendente. Collegando i tre rivelatori precendenti al generatore di coincidenze, si sono fatte misure del segnale rilevato dallo scintillatore in esame in corrispondenza con il passaggio di un muone reale, indicato dalla presenza del segnale in tutti e tre gli altri. Dato l'elevato numero di rivelatori in coincidenza (4, dato che il rivelatore centrale contiene due SiPM funzionanti, mentre i due estremali solo 1), ci si aspetta che il numero di coincidenze casuali sia molto piccolo.

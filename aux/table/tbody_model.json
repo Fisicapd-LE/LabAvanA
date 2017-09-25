@@ -1,6 +1,6 @@
 {
-	'before': "",
-	'middle': " \\\\ \\midrule \n",
-	'after': " \\\\ \n"
+	"before": "",
+	"middle": " \\\\ \\midrule \n",
+	"after": "\\\\ \n"
 }
 

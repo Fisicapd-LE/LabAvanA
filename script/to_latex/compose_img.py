@@ -3,11 +3,12 @@
 import sys
 
 def composeImg(name, folder, *files):
+	files = list(files)
 	f = open("latex/" + folder + "/" + name + ".tex", "w")
 	try:
 		caption = open("raw/" + folder + "/" + name + ".txt", "r").readlines()
 	except FileNotFoundError:
-		caption = name
+		caption = name.replace("_", " ")
 		
 	f.write("\\begin{figure}[H]\n")
 	f.write("\\centering\n")
@@ -18,8 +19,8 @@ def composeImg(name, folder, *files):
 			f.write("~\n")
 		f.write("\\\\\n")
 	
-	for i in range(3*(len(files)//3),len(files)):
-		f.write("\inpugraph{" + str(files[0][i]) + "}%\n")
+	for i in range(3*(len(files)//3),len(files[0])):
+		f.write("\inputgraph{" + str(files[0][i]) + "}%\n")
 		f.write("~\n")
 	
 	f.write("\\caption{" + caption + "}\n")
