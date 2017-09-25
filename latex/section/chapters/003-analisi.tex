@@ -13,19 +13,26 @@ impostati come ohmetri, di fornire una ben definita tensione e di misurare la co
 non si è fatto altro che mettere la PCB al buio (in modo da non rilevare una quantità troppo elevata di fotoni esterni quando si dà una tensione di bias al diodo),
 collegare il picoamperometro al diodo e studiare come varia la corrente al variare della tensione fornita, ottenendo la curva caratteristica del diodo nelle sue tre diverse
 sezioni: quella del voltaggio diretto, dello spegnimento e del breakdown; quest'ultima risulta particolarmente interessante in quanto è in questa regione che funzioneranno
-i diodi unaa volta collegato tutto l'esperimento. Le curve di caratterizzazione si possono vedere nel Grafici \ref{gr:} e \ref{gr:} per due dei diodi utilizzati
-%!!!!!!!!!INSERIRE GRAFICI CARATTERIZZAZIONE IV DEI DIODI E POI METTERE IL NOME SUL REF ALLA RIGA SOPRA!!!!!!!!!!!!
+i diodi unaa volta collegato tutto l'esperimento, infatti è stata l'unica studiata. Le curve di caratterizzazione si possono vedere nel Grafici \ref{gr:picoamp_1} e \ref{gr:piocoamp_2} per due dei diodi utilizzati
+\inputgraph{picoamp_1}
+\inputgraph{picoamp_2}
 
-Partendo da questi grafici si possono studiare diverse caratteristiche del fotodiodo, per esempio andando a considerare solamente i punti raccolti per voltaggi oltre
-il voltaggio di breakdown si può andare a interpolare tali dati con una retta ottenendo così la conduttanza equivalente del circuito quando il diodo è in breakdown.
-%!!!!!!!!!INSERIRE GRAFICI PER PARTE IN BREAKDOWN E VALORE CONDUTTANZA PER I GRAFICI CHE SI HANNO!!!!!!!!!!!!!!!
-
+Partendo da questi grafici si possono studiare diverse caratteristiche del fotodiodo, per esempio 
+si può andare a interpolare tali dati con una retta ottenendo così la conduttanza equivalente del circuito quando il diodo è in breakdown.
+Dall'intersezione delle rette di fit si trova il voltaggio di breakdown dei due diodi, che viene stimato come:
+\begin{equation}
+	V_\text{breakdown}1 = 28.02 V
+	V_\text{breakdown}2 = 28.08 V
+\end{equation}
+Si noti che questa misura è principalmente didattica, e non vuole dare un'effettiva utile stima del voltaggio di breakdown per i due diodi ma solamente un'ordine di grandezza
+(infatti uno studio più accurato verrà fatto per questi e i successivi diodi nelle sezioni successive), perciç a questa misurea non si associa incertezza statistica.
 
 \subsubsection{Studio dell'amplificazione dei fotodiodi}
-Molto importtante per la regolazione del voltaggio di bias per i singoli fotodiodi è sapere esattamente il voltaggio di breakdown di tali diodi e a quale variazione di
+Molto importante per la regolazione del voltaggio di bias per i singoli fotodiodi è sapere esattamente il voltaggio di breakdown di tali diodi e a quale variazione di
 voltaggio sia associato l'assorbimento di un fotone da parte di un fotodiodo. Per fare questo si è alimentato l'operazionale nella scheda contenente il fotodiodo, tale
 scheda è stata messa al buio, e si è collegato il bias del fotodiodo al generatore di tensione, e l'output all'oscilloscopio. Quindi, si è fatta variare la tensione
-di bias del fotodiodo e si sono raccolti un numero fisso di dati, come quelli che si possono vedere nel Grafico \ref{gr:6lemo_d1_305.root}, che è uno dei tanti grafici che sono stati
+di bias del fotodiodo e si sono raccolti un numero fisso di dati. Per raccogliere tali dati è stato necessario impostare un trigger in modo che non si salvasse il rumore elettronico: tale trigger è stato impostato a $5 mV$.
+Il Grafico \ref{gr:6lemo_d1_305.root} è uno dei tanti grafici che sono stati
 \inputgraph{6lemo_d1_gain_305}
 trovati per studiare l'amplificazione dei fotodiodi. Da questo grafico è evidente come ci sono diverse gaussiane ben distinte, ad indicare che si vede il voltaggio
 generato da un numero crescente di fotoni (infatti la gaussiana a voltaggio più basso sarà quella legata a un fotone, quella alla sua sinistra due fotoni eccetera).
