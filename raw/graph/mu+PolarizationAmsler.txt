@@ -1,0 +1,1 @@
+Polarizzazione del $\mu^+$ come funzione del momento, misurato al livello del mare. Preso da \cite{bib:AJP-Amsler}.

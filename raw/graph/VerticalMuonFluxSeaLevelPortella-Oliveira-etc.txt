@@ -1,0 +1,1 @@
+Distribuzione del flusso dei muoni verticali al livello del mare in funzione dell'energia. Preso da \cite{bib:Portella:1999ex}.

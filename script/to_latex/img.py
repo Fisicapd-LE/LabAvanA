@@ -8,7 +8,7 @@ def img_to_latex(name, folder, ext):
 	prefix = {"graph": "gr", "img": "img"}
 	f = open("latex/" + folder + "/" + cleanName + ".tex", "w")
 	try:
-		caption = open("raw/" + folder + "/" + cleanName + ".txt", "r").readlines()
+		caption = open("raw/" + folder + "/" + cleanName + ".txt", "r").read()
 	except FileNotFoundError:
 		caption = cleanName.replace("_", " ")
 	
