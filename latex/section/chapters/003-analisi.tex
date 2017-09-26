@@ -14,18 +14,14 @@ non si è fatto altro che mettere la PCB al buio (in modo da non rilevare una qu
 collegare il picoamperometro al diodo e studiare come varia la corrente al variare della tensione fornita, ottenendo la curva caratteristica del diodo nelle sue tre diverse
 sezioni: quella del voltaggio diretto, dello spegnimento e del breakdown; quest'ultima risulta particolarmente interessante in quanto è in questa regione che funzioneranno
 i diodi unaa volta collegato tutto l'esperimento, infatti è stata l'unica studiata. Le curve di caratterizzazione si possono vedere nel Grafici \ref{gr:picoamp_1} e \ref{gr:piocoamp_2} per due dei diodi utilizzati
-\inputgraph{picoamp_1}
-\inputgraph{picoamp_2}
+\inputgraph{picoamp}
 
 Partendo da questi grafici si possono studiare diverse caratteristiche del fotodiodo, per esempio 
 si può andare a interpolare tali dati con una retta ottenendo così la conduttanza equivalente del circuito quando il diodo è in breakdown.
 Dall'intersezione delle rette di fit si trova il voltaggio di breakdown dei due diodi, che viene stimato come:
-\begin{equation}
-	V_\text{breakdown}1 = 28.02 V
-	V_\text{breakdown}2 = 28.08 V
-\end{equation}
+\inputtab{breakdown_picoamp}
 Si noti che questa misura è principalmente didattica, e non vuole dare un'effettiva utile stima del voltaggio di breakdown per i due diodi ma solamente un'ordine di grandezza
-(infatti uno studio più accurato verrà fatto per questi e i successivi diodi nelle sezioni successive), perciç a questa misurea non si associa incertezza statistica.
+(infatti uno studio più accurato verrà fatto per questi e i successivi diodi nelle sezioni successive), perciò a questa misura non si associa incertezza statistica.
 
 \subsubsection{Studio dell'amplificazione dei fotodiodi}
 Molto importante per la regolazione del voltaggio di bias per i singoli fotodiodi è sapere esattamente il voltaggio di breakdown di tali diodi e a quale variazione di
