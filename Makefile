@@ -92,6 +92,7 @@ publish:
 # clean ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 clean: | cleanlog clean_preamble clean_graphs clean_imgs clean_tables
 	-cd ./latex; pwd; latexmk -C -pdf $(BASENAME_REL)
+	rm Relazione.pdf
 
 cleanlog:
 	$(call echolog,"Cleaning...")
