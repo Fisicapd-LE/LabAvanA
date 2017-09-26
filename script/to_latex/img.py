@@ -15,7 +15,7 @@ def img_to_latex(name, folder, ext):
 	if not cleanup.flags["sub"]:
 		f.write("\\begin{figure}[" + ("H" if cleanup.flags["nofloat"] else "h") + "]\n")
 	else:
-		f.write("\\begin{subfigure}{0.40\\textwidth}\n")
+		f.write("\\begin{subfigure}{0.45\\textwidth}\n")
 	f.write("\\centering\n")
 	if ext ==  ".tex":
 		f.write("\\resizebox{0.9\\textwidth}{!}{\\input{../raw/" + folder + "/" + cleanName + ext + "}}\n")
