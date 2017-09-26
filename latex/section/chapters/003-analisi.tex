@@ -29,7 +29,7 @@ scheda è stata messa al buio, e si è collegato il bias del fotodiodo al genera
 di bias del fotodiodo e si sono raccolti un numero fisso di dati. Per raccogliere tali dati è stato necessario impostare un trigger in modo che non si salvasse il rumore elettronico: tale trigger è stato impostato a $5 mV$.
 Il grafico di Immagine \ref{gr:6lemo_d1_gain_305} è uno dei tanti grafici che sono stati
 \inputgraph{6lemo_d1_gain_305}
-trovati per studiare l'amplificazione dei fotodiodi. Da questo grafico è evidente come ci sono diverse gaussiane ben distinte, ad indicare che si vede il voltaggio
+trovati per studiare l'amplificazione dei fotodiodi (gli altri non si presentano per leggibilità della relazione). Da questo grafico è evidente come ci sono diverse gaussiane ben distinte, ad indicare che si vede il voltaggio
 generato da un numero crescente di fotoni (infatti la gaussiana a voltaggio più basso sarà quella legata a un fotone, quella alla sua sinistra due fotoni eccetera).
 I segnali rivelati sono dovuti sia fotoni termici, cioè eccitazioni casuali nel semiconduttore che forma il diodo che vengono lette dal sistema come se fosse stato assorbito un fotone
 da tale diodo, sia fotoni residui che sono riusciti a passare attravero la schermatura. Grafici di questo tipo sono stati interpolati al variare della tensione di bias per ogni diodo con una funzione del tipo:
@@ -46,7 +46,7 @@ diminuisce. Facendo il fit in questo modo si tiene conto non solo del fatto che 
 relativa tra le gaussiane, ottenendo una stima per il guadagno migliore rispetto a quella che si otterrebbe, per esempio, misurando semplicemente la distanza tra i picchi delle gaussiane.\\
 
 Mettendo assieme tutti i grafici per ogni diodo si ottengono delle rette che descrivono il variare dell'amplificazione (cioè in pratica del voltaggio per fotone) al variare
-della tensione di bias. Un esempio di questi grafici si può vedere in questa sezione (non si riportano tutti per fluidità di lettura, possono essere visti nelle appendici), e nella Tabella \ref{tab:6lemo_gain} si possono vedere riassunti i risultati per quei due diodi (gli sltri si trovano nelle appendici). Si noti che non si hanno dei valori per ogni tensione
+della tensione di bias. Un esempio di questi grafici si può vedere in questa sezione (non si riportano tutti per fluidità di lettura, possono essere visti nelle appendici), e nella Tabella \ref{tab:6lemo_gain} si possono vedere riassunti i risultati per quei due diodi (gli altri si trovano nelle appendici). Si noti che non si hanno dei valori per ogni tensione
 di bias: questo avviene perché ad alcune tensioni il diodo non era ancora in breakdown e quindi non c'è stata la cascata che porta alla nascita del segnale in output dopo diversi minuti di presa dati; oppure il secondo picco causa un segnale così ampio da saturare l'oscilloscopio (che è stato settato in modo che questo evento succeda raramente).
 \inputgraph{6lemo_gain}
 \inputtab{6lemo_gain}
