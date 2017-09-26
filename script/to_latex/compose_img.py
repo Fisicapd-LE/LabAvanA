@@ -6,7 +6,7 @@ def composeImg(name, folder, *files):
 	files = list(files)
 	f = open("latex/" + folder + "/" + name + ".tex", "w")
 	try:
-		caption = open("raw/" + folder + "/" + name + ".txt", "r").readlines()
+		caption = open("raw/" + folder + "/" + name + ".txt", "r").read()
 	except FileNotFoundError:
 		caption = name.replace("_", " ")
 		

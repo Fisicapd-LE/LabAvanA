@@ -24,7 +24,7 @@ uniq = $(if $1,$(firstword $(1)) $(call uniq,$(filter-out $(firstword $(1)),$(1)
 
 img_candidate = $(firstword $(foreach ext,$(MEDIA_EXT),$(call glob,raw/$(1)/$(2)*(_nofloat).$(ext))))
 
-compose_dependency = $(call glob,raw/$(1)/$(2)@*)
+compose_dependency = $(call glob,raw/$(1)/$(2)@*.!(txt))
 
 strip_name = $(notdir $(basename $(1)))
 
@@ -142,7 +142,7 @@ $(GRAPHS): latex/graph/%.tex: $$(call img_candidate,graph,%) $$(wildcard raw/gra
 	
 $(GRAPHS_COMPOSED): latex/graph/%.tex: $$(call compose_dependency,graph,%) $$(wildcard raw/graph/%.txt) script/to_latex/compose_img.py
 	$(call echolog,"Composing $*...")
-	echo $(call compose_dependency,graph,$*)
+#	echo $(call compose_dependency,graph,$*)
 	script/to_latex/compose_img.py $* graph $(foreach name,$(call compose_dependency,graph,$*),$(call strip_name,$(name)))
 	
 clean_graphs:

@@ -34,11 +34,11 @@ del solenoide, e per farlo si è risolto numericamente tale problema. Si è intr
 e si è utlizzato l'algoritmo di Jacobi per ottenere il potenziale vettore data la densità di corrente introdotta. Poi si è calcolato numericamente il rotore per
 andare a trovare effettivamente il campo magnetico. L'algoritmo è stato fatto girare su uno spazio più grande (circa un fattore 4) del solenoide, in modo che siano
 fisicamente sensate le condizioni al contorno assorbenti ai bordi del sistema e su solo un ottante dello spazio, impostando condizioni al contorno riflettenti o antiriflettenti (per conservare la simmetria del sistema) nei piani che separano i settori. Da questo calcolo si è trovato come effettivamente il campo magnetico non sia costante
-all'interno del solenoide ma abbia una dipendenza dalla posizione, come si può vedere nelle Immagini \ref{gr:campo_xy} e ref{gr:campo zy} dove si può vedere la proiezione lungo una
+all'interno del solenoide ma abbia una dipendenza dalla posizione, come si può vedere nelle Immagini \ref{gr:campo_b@xy} e \ref{gr:campo_b@zy} dove si può vedere la proiezione lungo una
 sezione del solenoide della componente del campo magnetico parallela all'asse del solenoide stesso. Questo processo di risoluzione numerica dell'equazione differenziale
 ha permesso di avere dei valori per il campo magnetico più realistici che dipendano dalla posizione presa in considerazione.
 \textit{\`E stata inoltre fatta una simulazione del campo di una spira di corrente, che grazie al principio di sovrapposizione \`e stata inserita nel campo totale per verificare l'effetto di un'imperfezione nel posaggio dei fili.}
-\inputgraph{campo_xy}
+\inputgraph{campo_b}
 
 \subsection{Decadimento del muone cosmico}
 Se il muone cosmico viene fermato all'interno dell'assorbitore, esso decadrà dopo un tempo che dipende dal tipo di muone che si ferma (muone o antimuone), che è distribuito
