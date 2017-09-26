@@ -3,9 +3,9 @@ Dato che per completare l'esperimento si ha bisogno di ancora un semestre di lav
 (per esempio alla misura del fattore di Landè dei muoni o al tempo di decadimento dei muoni), ma si hanno dati sulla caratterizzazione di parte del sistema di acquisizione,
 in particolare sulla caratterizzazione dei SiPM e sulla misura di efficienza dei rivelatori.
 
-\subsection{Caratterizzazione dei fotodiodi}
+\subsection{Caratterizzazione dei diodi}
 I SiPM sono stati caratterizzati in due modi. Si è prima studiata la caratteristica tensione corrente (solo per il primo modello della scheda, in quanto nelle versioni successive l'ingresso del bias, su cui \`e necessario agire per la misura, non e' piu' in un cavo independente, ma unito agli altri e quindi di difficile accesso). Trovando la curva, e' possibile vedere a che tensione si innesca il meccanismo del breakdown, ovvero a che tensione il diodo diventa operativo come rivelatore.
-In seguito si è studiata la variazione del parametro di guadagno per ogni fotone al variare del voltaggio di bias per ogni fotodiodo utilizzato. Il guadagno infatti si prevede essere proporzionale alla sovratensione rispetto al breakdown. Estrapolando i dati fino a guadagno 0, si puo' ottenere un'altra stima della tensione di breakdown, che non ha bisogno stavolta dell'accesso all'ingresso di bias. Questo metodo e' percio' stato usato nei seguenti rivelatori
+In seguito si è studiata la variazione del parametro di guadagno per ogni fotone al variare del voltaggio di bias per ogni diodo utilizzato. Il guadagno infatti si prevede essere proporzionale alla sovratensione rispetto al breakdown. Estrapolando i dati fino a guadagno 0, si puo' ottenere un'altra stima della tensione di breakdown, che non ha bisogno stavolta dell'accesso all'ingresso di bias. Questo metodo e' percio' stato usato nei seguenti rivelatori
 
 \subsubsection{Studio della caratteristica tensione corrente}
 Per studiare tale caratteristica si è utilizzato un picoamperometro collegato al diodo: esso permette, in maniera simile a quanto viene fatto dai multimetri commerciali
@@ -22,14 +22,14 @@ Dall'intersezione delle rette di fit si trova il voltaggio di breakdown dei due 
 Si noti che questa misura è principalmente didattica, e non vuole dare un'effettiva utile stima del voltaggio di breakdown per i due diodi ma solamente un'ordine di grandezza
 (infatti uno studio più accurato verrà fatto per questi e i successivi diodi nelle sezioni successive), perciò a questa misura non si associa incertezza.
 
-\subsubsection{Studio dell'amplificazione dei fotodiodi}
-Molto importante per la regolazione del voltaggio di bias per i singoli fotodiodi è sapere esattamente il voltaggio di breakdown di tali diodi e a quale variazione di
-voltaggio sia associato l'assorbimento di un fotone da parte di un fotodiodo. Per fare questo si è alimentato l'operazionale nella scheda contenente il fotodiodo, tale
-scheda è stata messa al buio, e si è collegato il bias del fotodiodo al generatore di tensione, e l'output all'oscilloscopio. Quindi, si è fatta variare la tensione
-di bias del fotodiodo e si sono raccolti un numero fisso di dati. Per raccogliere tali dati è stato necessario impostare un trigger in modo che non si salvasse il rumore elettronico: tale trigger è stato impostato a $5 mV$.
+\subsubsection{Studio dell'amplificazione dei diodi}
+Molto importante per la regolazione del voltaggio di bias per i singoli diodi è sapere esattamente il voltaggio di breakdown di tali diodi e a quale variazione di
+voltaggio sia associato l'assorbimento di un fotone da parte di un diodo. Per fare questo si è alimentato l'operazionale nella scheda contenente il diodo, tale
+scheda è stata messa al buio, e si è collegato il bias del diodo al generatore di tensione, e l'output all'oscilloscopio. Quindi, si è fatta variare la tensione
+di bias del diodo e si sono raccolti un numero fisso di dati. Per raccogliere tali dati è stato necessario impostare un trigger in modo che non si salvasse il rumore elettronico: tale trigger è stato impostato a $5 mV$.
 Il grafico di Immagine \ref{gr:6lemo_d1_gain_305} è uno dei tanti grafici che sono stati
 \inputgraph{6lemo_d1_gain_305}
-trovati per studiare l'amplificazione dei fotodiodi (gli altri non si presentano per leggibilità della relazione). Da questo grafico è evidente come ci sono diverse gaussiane ben distinte, ad indicare che si vede il voltaggio
+trovati per studiare l'amplificazione dei diodi (gli altri non si presentano per leggibilità della relazione). Da questo grafico è evidente come ci sono diverse gaussiane ben distinte, ad indicare che si vede il voltaggio
 generato da un numero crescente di fotoni (infatti la gaussiana a voltaggio più basso sarà quella legata a un fotone, quella alla sua sinistra due fotoni eccetera).
 I segnali rivelati sono dovuti sia fotoni termici, cioè eccitazioni casuali nel semiconduttore che forma il diodo che vengono lette dal sistema come se fosse stato assorbito un fotone
 da tale diodo, sia fotoni residui che sono riusciti a passare attravero la schermatura. Grafici di questo tipo sono stati interpolati al variare della tensione di bias per ogni diodo con una funzione del tipo:
@@ -56,17 +56,53 @@ Si riportano per completezza nella Tabella \ref{tab:breakdown_gain} i dati relat
 
 
 \subsection{Stima dell'efficienza dell'apparato}
-\`E stata fatta una seconda serie di misure per poter discutere dell'efficienza del sistema di acquisizione. In queste misure il rivelatore \`e stato posto all'interno del solenoide, insieme a quelli gi\`a analizzati dal gruppo dell'anno precendente. Collegando i tre rivelatori precendenti al generatore di coincidenze, si sono fatte misure del segnale rilevato dallo scintillatore in esame in corrispondenza del passaggio di un muone reale, indicato dalla presenza del segnale in tutti e tre gli altri. Dato l'elevato numero di rivelatori in coincidenza (4: ogni rivelatore quando l'esperimento sarà terminato avrà due fotodiodi, nel setup che è stato fatto l'anno scorso ci sono due rivelatori con un solo fotodiodo funzionante e un rivelatore con entrambi, posto tra i due precedenti), ci si aspetta che il numero di coincidenze casuali sia molto piccolo.
+\subsubsection{Efficienza sperimentale}
+\`E stata fatta una seconda serie di misure per poter discutere dell'efficienza del sistema di acquisizione. In queste misure il rivelatore \`e stato posto all'interno del solenoide, insieme a quelli gi\`a analizzati dal gruppo dell'anno precendente. Collegando i tre rivelatori precendenti al generatore di coincidenze, si sono fatte misure del segnale rilevato dallo scintillatore in esame in corrispondenza del passaggio di un muone reale, indicato dalla presenza del segnale in tutti e tre gli altri (si è impostata la soglia del trigger a -20 mV, che indica in prattica una raccolta superiore a un fotone in modo da escludere parte dei fotoni termici). Dato l'elevato numero di rivelatori in coincidenza (4: ogni rivelatore quando l'esperimento sarà terminato avrà due diodi, nel setup che è stato fatto l'anno scorso ci sono due rivelatori con un solo diodo funzionante e un rivelatore con entrambi, posto tra i due precedenti), ci si aspetta che il numero di coincidenze casuali sia molto piccolo.
 
-I risultati ottenuti si possono vedere nelle Immagini \ref{gr:d1@eff_full} e \ref{gr:d2@eff_full}
+Nelle Immagini \ref{gr:eff_simple} si possono vedere i conteggi effettuati dallo scintillatore sotto studio ogni volta che il sistema degli altri 3 scintillatori ha triggerato.
 
+\inputgraph{eff_simple}
 %!!!!!!!!!!!!GRAFICO LANDAU!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-In questo grafico e' stata anche fatto un fit con una funzione di Landau, in modo da ottenere i parametri del sengale lasciato da un MIP (minimum ionization particle), che con la nostra configurazione di rivelatori lascia con probabilita' massima 7 fotoni.
+In questo grafico e' stata anche fatto un fit con una funzione di Landau, in modo da ottenere i parametri del sengale lasciato da una MIP (minimum ionization particle), che con la nostra configurazione di rivelatori lascia con probabilita' massima 7 fotoni (è il parametro fittato della Landau). \'E stata utilizzata la funzione di Landau in quanto essa è la funzione che descrive i processi di ionizzazione come quello che ci permette di rivelare la particella.
 
-Per confronto, su uno dei due diodi si sono fatte anche misure togliendo uno alla volta i rivelatori in coicidenza. Si puo' vedere come togliendo un solo segnale di coincidenza la differenza non e' molta, le due efficienze sono compatibili, mentre togliendone due crolla al 30\%. Questo \`e perch\'e con soli due rivelatori in coicidenza c'\`e una probabilit\`a non trascurabile che due segnali termici siano avvenuti contemporaneamente, simulando un muone che non e' mai passato per il rivelatore in esame.
+Per confronto, su uno dei due diodi si sono fatte anche misure togliendo uno alla volta i rivelatori in coicidenza. Studiando il diodo due dello scintillatore 1 e rimuovendo la richiesta che triggeri lo scintillatore subito sotto quello studiato la differenza tra le due efficienze non è molta, perché è molto piccola la quantità di falsi eventi causati da fotoni termici. Il grafico dei conteggi risulta della stessa forma rispetto a quello presentato in precedenza. Andando invece a togliere il trigger dallo scintillatore più lontano da quello studiato l'efficienza diminuisce in quanto cambia il fattore geometrico (il fattore che tiene conto degli eventi che non vengono visti non per inefficienza del rivelatore stesso ma perché la traiettoria dei muoni è tale da farli entrare in tutti i rivelatori di trigger ma non in quello studiato. Togliendo i due diodi del rivelatore centrale si vede un crollo dell'efficienza a $\sim$ 60\%. Questo \`e perch\'e con soli due rivelatori in coicidenza c'\`e una probabilit\`a non trascurabile che due segnali termici siano avvenuti contemporaneamente, simulando un muone che non \'e mai passato per il rivelatore in esame (questi eventi non sono trascurabili in quanto, tra l'altro, permettevano di visualizzare le altre gaussiane nello studio dell'amplificazione trattato nella sezione precedente). Togliendo questo trigger, cambia anche la forma dei conteggi: infatti oltre alla Landau si può vedere anche una distribuzione poissoniana legata alla generazione casuale termica, questo grafico si può vedere nell'Immagine \ref{gr:eff_no@2}. Andando invece a rimuovere il trigger su due diversi scintillatori si vede un calo dell'efficienza comunque considerevole e si può sempre riconoscere la poissoniana nel gragico dei conteggi come si vede nell'Immagine \ref{gr:eff_no@13}.\\
+\inputgraph{eff_no}
 
-Per analizzare anche questa possibilit\`a si sono fatte ulteriori misure cambiando la lunghezza temporale della finestra nella quale due segnali sono considerati in coicidenza, prima con due, poi con quattro rivelatori in coincidenza. I risultati sono visibili nelle Immagini \ref{gr:2riv@eff_sign_length_riv1} e \ref{gr:4riv@eff_sign_length_riv1} e nelle Tabelle \ref{tab:4riv_sign_length_riv1} e \ref{tab:2riv_sign_length_riv1}.
+Nella Tabella tabella \ref{tab:efficiency} si possono vedere riassunte tutte le efficienze. Si noti che l'efficienza utilizzando due diodi nello stesso scintillatore è più alta rispetto a quella che si ottiene utilizzando due diodi in due scintillatori diversi; questa è conseguenza del fatto che in quest'ultimo caso si ha un falso trigger in più che consiste nel passaggio di un muone in uno degli scintillatori e un fotone termico nell'altro scintillatore.
+
+\subsubsection{Correzione dell'efficienza considerando le coincidenze casuali}
+Per analizzare quanto è importante la generazione di fotoni termici si sono fatte ulteriori misure cambiando la lunghezza temporale della finestra nella quale dei segnali sono considerati in coicidenza, prima con due, poi con quattro rivelatori in coincidenza.
+Interessante è lo studio dell'efficienza richiedendo che il segnale ci sia stato su due scintillatori. Si tratti il problema. Sia $n_{13}$ il rate di segnali che hanno triggerato sui due rivelatori, $n_\mu^T$ il rate di muoni che attraversano sia gli scintillatori trigger che quello studiato, $n_\mu^\text{OUT}$ il rate di muoni che attraversano gli scintillatori di trigger ma non quello che si sta studiando e $n_\text{rand}$ il numero di coincidenze casuali legate alla comparsa di fotoni termici. Siano le $n$ associate ai rate e le $N$ associate al reale numero, in modo tale che $n=N/t$ con $t$ tempo di acqusizione. Si avrà la relazione:
+\begin{equation}
+  n_{13} = n_\mu^T + n_\mu^\text{OUT} + n_\text{rand}
+\end{equation}
+Si rappresenti ora su un grafico $n_{123}$ al variare della finestra di acquisizione $\tau$. Per fare ciò si è semplicemente acquisito impostando l'oscilloscopio in modo
+che si fermasse dopo 3000 eventi, e poi si è calcolato $n_{13}$ facendo $3000/t$. Questo grafico si può vedere nell'Immagine \ref{gr:eff_width_2}, dove si nota che i dati formano una retta: per comprendere il motivo di tale forma conviene considerare che nell'equazione sopra scritta l'unico termine che dipende da $\tau$ è il termine randomico.
+Tale termine avrà un'andamento lineare in quanto una volta che in un diodo si genera un fotone termico la probabilità che il segnale diventi un segnale di trigger è uguale al prodotto tra il rate di generazione di fotoni termici (che si considera costante) per l'ampiezza dell'intervallo. Ovviamente, se il trigger fosse su più di due scintillatori, questo termine andrebbe  al quadrato, e dal polinomio di primo grado si salirebbe verso i polinomi di grado superiore. Su tale immagine si può vedere l'interpolazione di tale retta, che ha reso noti i parametri:
+\begin{equation}
+  m = \hspace{2cm} q = 
+\end{equation}
+Particolarmente importante è il valore del coefficiente $q$: infatti, nel limite per $\tau \to 0$ il termine stocastico scompare, e quindi si ha la somma tra il termine reale di muoni e il termine geometrico. Per quanto riguarda il termine geometrico, una stima è stata fatta utilizzando la simulazione discussa nella prossima sezione, e ha rivelato che nel caso di questo trigger il numero di eventi che entrano in tutti i rivelatori è il $(97.1 \pm 0.1) \%$, perciò il numero di eventi che sono inefficienti per motivi geometrici sono il $(2.9 \pm 0.1) \%$.
+
+Data questa stima, sia $k$ il valore di tale fattore moltiplicativo che identifica il rate di eventi randomici rispetto a quello totale (nel nostro caso quindi si avrà $k = 0.029$) allora si ricava con qualche passaggio algebrico che
+\begin{equation}
+  n_\mu^\text{OUT} = \frac{k}{1+k}n_\mu^T
+\end{equation}
+A questo punto, data la $q$ interpolata, è possibile andaare a stimare $n_\mu^T$, che non è altro che il rate di muoni che attraversano il sistema di rivelazione in questa configurazione. Si ottiene:
+\begin{equation}
+  n_\mu^T = 
+\end{equation}
+\\
+
+Questa misura permette inoltre di andare a trovare l'efficienza \textit{reale} dello scintillatore, intesa come la percentuale di eventi che non vengono rivelati una volta che attraversano il singolo scintillatore. Date le notazioni assunte, si ha che questa efficienza $\epsilon$ si può scrivere in modo tale che valga la relazione
+\begin{equation}
+  n_T = \epsilon n_\mu^T
+\end{equation}
+con $n_T$ che non è altro che il rate di eventi che hanno triggerato ma anche lasciato un segnale non termico (settato cioè come un segnale più grande di un fotone) sullo scintillatore studiato. Si noti innanzitutto che nessuno dei termini scritti sopra dipendono dall'ampiezza dell'intervallo di coincidenza $\tau$. Per confermare questa
+prima proprietà per la grandezza $n_T$ si possono prendere i rate accettati (quindi il numero di eventi registrati dall'oscilloscopio) diviso per il tempo della presa dati, al variare della finestra di acquisizione. E poi boh, dovrò continuare a scrivere staroba
+
+I risultati sono visibili nelle Immagini \ref{gr:2riv@eff_sign_length_riv1} e \ref{gr:4riv@eff_sign_length_riv1} e nelle Tabelle \ref{tab:4riv_sign_length_riv1} e \ref{tab:2riv_sign_length_riv1}.
 Come si puo' vedere, nel caso con 4 rivelatori non c'e' praticamente differenza tra le efficienze, mentre nel caso con 2 rivelatori c'\`e una dipendenza quadratica dalla lunghezza del segnale. L'efficienza reale \`e comunque ottenibile attraverso un estrapolazione, in quanto nel limite della lunghezza che tende a 0 la probabilit\`a che due segnali non correlati diano coincidenza tende a 0.
 
 Il procedimento \`e stato poi ripetuto per il secondo rivelatore costruito, ottendendo i risultati di Immagini \ref{gr:2riv@eff_sign_length_riv2} e \ref{gr:4riv@eff_sign_length_riv2} e nelle Tabelle \ref{tab:4riv_sign_length_riv2} e \ref{tab:2riv_sign_length_riv2}.
