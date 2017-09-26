@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.3.28)  26 SEP 2017 10:45
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.3.28)  26 SEP 2017 10:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1810,7 +1810,7 @@ Missing character: There is no ; in font nullfont!
 )))
 (./table/breakdown_picoamp.tex
 
-Package tabulary Warning: No suitable columns! on input line 10.
+Package tabulary Warning: No suitable columns! on input line 9.
 
 )
 
@@ -1831,12 +1831,11 @@ Missing character: There is no ; in font nullfont!
 )) [10
 
 ]
-[11]
 Underfull \hbox (badness 10000) in paragraph at lines 43--44
 
  []
 
-(./graph/6lemo_gain.tex (./graph/6lemo_gain@d1.tex
+[11] (./graph/6lemo_gain.tex (./graph/6lemo_gain@d1.tex
 (../raw/graph/6lemo_gain@d1.tex
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -1980,10 +1979,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 33158 strings out of 493304
- 679975 string characters out of 6139871
- 886240 words of memory out of 5000000
- 35392 multiletter control sequences out of 15000+600000
+ 33159 strings out of 493304
+ 679996 string characters out of 6139871
+ 886248 words of memory out of 5000000
+ 35393 multiletter control sequences out of 15000+600000
  118492 words of font info for 276 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  67i,13n,92p,1199b,885s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1998,7 +1997,7 @@ yr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/urw/times/utmri8a.pfb>
-Output written on Relazione.pdf (20 pages, 2194557 bytes).
+Output written on Relazione.pdf (20 pages, 2194610 bytes).
 PDF statistics:
  421 PDF objects out of 1000 (max. 8388607)
  322 compressed objects within 4 object streams

@@ -4,31 +4,30 @@ Dato che per completare l'esperimento si ha bisogno di ancora un semestre di lav
 in particolare sulla caratterizzazione dei SiPM e sulla misura di efficienza dei rivelatori.
 
 \subsection{Caratterizzazione dei fotodiodi}
-I SiPM sono stati caratterizzati in due modi. Si è prima studiata la caratteristica tensione corrente (solo per il primo modello della scheda, in quanto nelle versioni successive l'ingresso del bias, su cui \`e necessario agire per la misura, non e' piu' in un cavo independente, ma unito agli altri e quindi di difficile accesso). Trovando la curva, e' possibile vedere a che tensione si innesca il meccanicmo del breakdown, ovvero a che tensione il diodo diventa operativo come rivelatore.
-In seguito si è studiata la variazione del parametro di guadagno per ogni fotone al variare del voltaggio di bias per ogni fotodiodo utilizzato. Il guadagno infatti si prevede essere proporzionale alla sovrattensione rispetto al breakdown. Estrapolando i dati fino a guadagno 0, si puo' ottenere un'altra stima della tensione di breakdown, che non ha bisogno stavolta dell'accesso all'ingresso di bias. Questo metodo e' percio' stato usato nei seguenti rivelatori
+I SiPM sono stati caratterizzati in due modi. Si è prima studiata la caratteristica tensione corrente (solo per il primo modello della scheda, in quanto nelle versioni successive l'ingresso del bias, su cui \`e necessario agire per la misura, non e' piu' in un cavo independente, ma unito agli altri e quindi di difficile accesso). Trovando la curva, e' possibile vedere a che tensione si innesca il meccanismo del breakdown, ovvero a che tensione il diodo diventa operativo come rivelatore.
+In seguito si è studiata la variazione del parametro di guadagno per ogni fotone al variare del voltaggio di bias per ogni fotodiodo utilizzato. Il guadagno infatti si prevede essere proporzionale alla sovratensione rispetto al breakdown. Estrapolando i dati fino a guadagno 0, si puo' ottenere un'altra stima della tensione di breakdown, che non ha bisogno stavolta dell'accesso all'ingresso di bias. Questo metodo e' percio' stato usato nei seguenti rivelatori
 
 \subsubsection{Studio della caratteristica tensione corrente}
 Per studiare tale caratteristica si è utilizzato un picoamperometro collegato al diodo: esso permette, in maniera simile a quanto viene fatto dai multimetri commerciali
 impostati come ohmetri, di fornire una ben definita tensione e di misurare la corrente che attraversa l'oggetto generata da questa tensione. Quindi,
 non si è fatto altro che mettere la PCB al buio (in modo da non rilevare una quantità troppo elevata di fotoni esterni quando si dà una tensione di bias al diodo),
-collegare il picoamperometro al diodo e studiare come varia la corrente al variare della tensione fornita, ottenendo la curva caratteristica del diodo nelle sue tre diverse
-sezioni: quella del voltaggio diretto, dello spegnimento e del breakdown; quest'ultima risulta particolarmente interessante in quanto è in questa regione che funzioneranno
-i diodi unaa volta collegato tutto l'esperimento, infatti è stata l'unica studiata. Le curve di caratterizzazione si possono vedere nel Grafici \ref{gr:picoamp_1} e \ref{gr:piocoamp_2} per due dei diodi utilizzati
+collegare il picoamperometro al diodo e studiare come varia la corrente al variare della tensione fornita, ottenendo la curva caratteristica del diodo nelle sue due
+sezioni più interessanti: quella dello spegnimento e quella del breakdown; quest'ultima risulta particolarmente interessante in quanto è in questa regione che funzioneranno
+i diodi unaa volta collegato tutto l'esperimento. Le curve di caratterizzazione si possono vedere nel Grafici \ref{gr:picoamp} per i due  diodi nella schedina utilizzata.
 \inputgraph{picoamp}
 
-Partendo da questi grafici si possono studiare diverse caratteristiche del fotodiodo, per esempio 
-si può andare a interpolare tali dati con una retta ottenendo così la conduttanza equivalente del circuito quando il diodo è in breakdown.
+In tale grafico si può vedere la corrente al variare della tensione di bias in scala logaritmica: infatti si prevede sia nella fase di spegnimento del diodo che in quella di breakdown si abbia un aumento esponenziale della corrente al variare della tensione; perciò si sono fatti dei fit con delle rette. Si noti dal grafico che per fittare la sezione del breakdown si è fatto un fit solo con i primi datti dopo il breakdown: questo perché poi inziano a essere rilevanti altri fenomeni che vanno a piegare la curva tensione-corrente, e perciò a rovinare la stima del voltaggio di breakdown.
 Dall'intersezione delle rette di fit si trova il voltaggio di breakdown dei due diodi, che viene stimato come:
 \inputtab{breakdown_picoamp}
 Si noti che questa misura è principalmente didattica, e non vuole dare un'effettiva utile stima del voltaggio di breakdown per i due diodi ma solamente un'ordine di grandezza
-(infatti uno studio più accurato verrà fatto per questi e i successivi diodi nelle sezioni successive), perciò a questa misura non si associa incertezza statistica.
+(infatti uno studio più accurato verrà fatto per questi e i successivi diodi nelle sezioni successive), perciò a questa misura non si associa incertezza.
 
 \subsubsection{Studio dell'amplificazione dei fotodiodi}
 Molto importante per la regolazione del voltaggio di bias per i singoli fotodiodi è sapere esattamente il voltaggio di breakdown di tali diodi e a quale variazione di
 voltaggio sia associato l'assorbimento di un fotone da parte di un fotodiodo. Per fare questo si è alimentato l'operazionale nella scheda contenente il fotodiodo, tale
 scheda è stata messa al buio, e si è collegato il bias del fotodiodo al generatore di tensione, e l'output all'oscilloscopio. Quindi, si è fatta variare la tensione
 di bias del fotodiodo e si sono raccolti un numero fisso di dati. Per raccogliere tali dati è stato necessario impostare un trigger in modo che non si salvasse il rumore elettronico: tale trigger è stato impostato a $5 mV$.
-Il Grafico \ref{gr:6lemo_d1_305.root} è uno dei tanti grafici che sono stati
+Il Grafico \ref{gr:6lemo_d1_305} è uno dei tanti grafici che sono stati
 \inputgraph{6lemo_d1_gain_305}
 trovati per studiare l'amplificazione dei fotodiodi. Da questo grafico è evidente come ci sono diverse gaussiane ben distinte, ad indicare che si vede il voltaggio
 generato da un numero crescente di fotoni (infatti la gaussiana a voltaggio più basso sarà quella legata a un fotone, quella alla sua sinistra due fotoni eccetera).
@@ -40,10 +39,15 @@ da tale diodo, sia fotoni residui che sono riusciti a passare attravero la scher
 	\label{eq:segnale_buio}
 \end{equation}
 
-Dove "${\cal N}$" indica un coefficiente di normalizzazione, "n" e' il numero di picchi visibili nel grafico, "i" \`e un indice che scorre sul numero di picchi, "$\alpha$" e' il parametro della poissoniana, "d" e' la media della prima gaussiana, le "$\sigma_i$" sono le sigma dei picchi e "G" e' il guadagno, il paramentro che ci interessa in questo fit. Questa equazione deriva dal fatto che il numero di fotoni rilevati, veri o termici che siano, obbedisce alla probabilit\`a poissoniana, mentre il segnale generato da un singolo fotone \`e gaussiano, a causa delle risoluzione finita del sistema scintillatore SiPM.\\
+Dove "${\cal N}$" indica un coefficiente di normalizzazione, "n" e' il numero di picchi visibili nel grafico, "i" \`e un indice che scorre sul numero di picchi, "$\alpha$" e' il parametro della poissoniana, "d" e' la media della prima gaussiana, le "$\sigma_i$" sono le sigma dei picchi e "G" e' il guadagno, il paramentro che ci interessa in questo fit.
+
+Questa equazione deriva dal fatto che il numero di fotoni rilevati, veri o termici che siano, obbedisce alla probabilit\`a poissoniana, mentre il segnale generato da un singolo fotone \`e gaussiano, a causa delle risoluzione finita del sistema scintillatore SiPM. Questo vuol dire in pratica che il fit è dato da una somma di gaussiane (una per numero di picchi visibili nel grafico) riscalate con un'ampiezza data dal calcolo di una funzione poissoniana, tale per cui all'aumentare dei fotoni la probabilità di avere un conteggio
+diminuisce. Facendo il fit in questo modo si tiene conto non solo del fatto che si ahnno diverse gaussiane, ma si utilizza anche la distanza tra le gaussiane e  l'ampiezza
+relativa tra le gaussiane, ottenendo una stima per il guadagno migliore rispetto a quella che si otterrebbe, per esempio, misurando semplicemente la distanza tra i picchi delle gaussiane.
 
 Mettendo assieme tutti i grafici per ogni diodo si ottengono delle rette che descrivono il variare dell'amplificazione (cioè in pratica del voltaggio per fotone) al variare
-della tensione di bias. Questi grafici si possono vedere in questa sezione, e nelle Tabelle \ref{tab:6lemo_gain} e \ref{tab:6lemo_breakdown} si possono vedere riassunti i risultati per ogni diodo.
+della tensione di bias. Un esempio di questi grafici si può vedere in questa sezione (non si riportano tutti per fluidità di lettura, possono essere visti nelle appendici), e nelle Tabelle \ref{tab:6lemo_gain} e \ref{tab:6lemo_breakdown} si possono vedere riassunti i risultati per ogni diodo. Si noti che non si hanno dei valori per ogni tensione
+di bias: questo avviene perché ad alcune tensioni il diodo non era ancora in breakdown e quindi non c'è stata la cascata che porta alla nascita del segnale in output dopo diversi minuti di presa dati.
 \inputgraph{6lemo_gain}
 \inputtab{6lemo_gain}
 \inputtab{6lemo_breakdown}
