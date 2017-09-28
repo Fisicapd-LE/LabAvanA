@@ -15,12 +15,12 @@ def composeImg(name, folder, *files):
 	
 	for i in range(len(files)//3):
 		for j in range(3):
-			f.write("\inpugraph{" + files[2*i+j] + "}%\n")
+			f.write("\input" + folder + "{" + files[2*i+j] + "}%\n")
 			f.write("~\n")
 		f.write("\\\\\n")
 	
 	for i in range(3*(len(files)//3),len(files[0])):
-		f.write("\inputgraph{" + str(files[0][i]) + "}%\n")
+		f.write("\input" + folder + "{" + str(files[0][i]) + "}%\n")
 		f.write("~\n")
 	
 	f.write("\\caption{" + caption + "}\n")
