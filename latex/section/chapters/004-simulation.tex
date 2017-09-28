@@ -9,7 +9,7 @@ Come prima cosa è necessario il programma simuli dei raggi cosmici che siano re
 	\label{eq:distr_cosmici}
 \end{equation}
 dove $\theta$ e $\varphi$ sono la direzione del raggio cosmico in coordinate sferiche.
-Per ogni evento un raggio cosmico viene generato in un punto casuale del piano lungo 700 mm lungo $x$ e 350 mm lungo $y$, con $z$ pari alla superficie superiore del primo rivelatore e la direzione di tale raggio cosmico è data dall'Equazione \ref{eq:distr_cosmici}: questo \`e perch\'e un raggio cosmico piu' lontano dal bordo del rivelatore dovrebbe essere molto inclinato per poter interagire con i l'apparato, condizione molto sfavorita dalla sua distribuzione. Per non rendere la simulazione troppo pesante si \`e quindi tagliata la distribuzione della posizione del passaggio del cosmico, a priori uniforme, ad una distanza ragionevole per non compromettere il risultato. L'errore compiuto con tale assunzione e' stato stimmato essere del \textit{roba}\%.
+Per ogni evento un raggio cosmico viene generato in un punto casuale del piano lungo 700 mm lungo $x$ e 350 mm lungo $y$, con $z$ pari alla superficie superiore del primo rivelatore e la direzione di tale raggio cosmico è data dall'Equazione \ref{eq:distr_cosmici}: questo \`e perch\'e un raggio cosmico piu' lontano dal bordo del rivelatore dovrebbe essere molto inclinato per poter interagire con i l'apparato, condizione molto sfavorita dalla sua distribuzione. Per non rendere la simulazione troppo pesante si \`e quindi tagliata la distribuzione della posizione del passaggio del cosmico, a priori uniforme, ad una distanza ragionevole per non compromettere il risultato.
 Tali raggi cosmici vengono fatti evolvere nel limite ultrarelativistico: data la loro alta velocità si può considerare che essi seguano una traiettoria rettilinea nonostante
 le forze esterne (in particolare rilevante in aria è l'effetto del campo magnetico che tenderebbe a deviare la traiettoria), e si muovano a velocità infinita (non disponiamo comunque della risoluzione temporale necessaria a rilevare differenze di tempo dell'ordine della frazione di nanosecondo come serivrebbe in questo caso).
 
@@ -17,16 +17,16 @@ le forze esterne (in particolare rilevante in aria è l'effetto del campo magnet
 Quando viene fatto evolvere un muone esso potrebbe entrare all'interno dei rivelatori, che possono rivelare tale passaggio. Per modellizzare tale evento, come prima cosa,
 si considera che il rivelatore non influenza il raggio cosmico (il muone non può quindi essere assorbito all'interno del rivelatore), inoltre
 si modellizza l'interazione come un fenomeno esattamente prevedibile e non stocastico come realmente è. Per poter comprendere cosa succede quando un muone attraversa
-un rivelatore si utilizzano i dati sperimentali (otttenuti come descritto alla Sezione \textit{!!!!!!!INSERIRE RIFERIMENTO A SEZIONE!!!!!!!}): data la moda della distribuzione
+un rivelatore si utilizzano i dati sperimentali (otttenuti come descritto alla Sezione \ref{sec:efficiency}: data la moda della distribuzione
 sperimentale di fotoni, quello si interpreta come il numero di fotoni generati dal passaggio di un muone cosmico quando attraversa lo spessore (noto) del rivelatore
 in direzione perpendicolare alla faccia del rivelatore stesso (ovvero la moda della distibuzione dell'inclinazione). In questo modo si può andare a stimare effettivamente quanti fotoni vengono generati per ogni mm di scintillatore attraversato dal muone cosmico (si noti che si stanno trascurando parecchi fattori, come per esempio il diverso assorbimento in diversi punti dell'assorbitore
-a diversa distanza dalla fibra ottica all'interno dello scintillatore, o la perdita di energia del muone a causa della ionizzazione). Così, usando delle identità trigonometriche, è stato possibile trovare lo spazio percorso all'interno del rivelatore e, noto quest'ultimo, è stato possibile trovare il numero di fotoni che ci si aspetta arrivino ai canali di acquisizione. In realta' questo procedimento non \`e di estrema importanza in quanto il segnale generato e' usato solo come confronto con un arbitraria "soglia", a simulare il modulo di coincidenza (la soglia \`e stata impostata a 3 fotoni).
+a diversa distanza dalla fibra ottica all'interno dello scintillatore, o la perdita di energia del muone a causa della ionizzazione). Così, usando delle identità trigonometriche, è stato possibile trovare lo spazio percorso all'interno del rivelatore e, noto quest'ultimo, è stato possibile trovare il numero di fotoni che ci si aspetta arrivino ai canali di acquisizione. In realta' questo procedimento non \`e di estrema importanza in quanto il segnale generato e' usato solo come confronto con un arbitraria "soglia", a simulare il modulo di coincidenza (la soglia \`e stata impostata a 3 fotoni, $\sim$ 50~mV, come impostato nle reale modulo di coincidenza).
 
 \subsection{Interazione con l'assorbitore}
 Per quanto riguarda l'interazione con l'assorbitore, diversamente a quanto fatto per l'interazione con i rivelatori, si considera il processo come stocastico. Un muone
 ha una probabilità di interagire con il materiale che dipende dal materiale stesso e dall'energia del muone. Tale relazione è stata semplificata, e si è considerato che il
 muone ha probabilità di decadere uniforme in una regione spaziale ben definita\footnote{tale regione è stata impostata computazionalmente in modo che non si generino troppi
-dati inutili, quindi a meno di un coefficiente moltiplicativo stimabile}. Si è inoltre modellizzato il fenomeno in modo tale che il muone possa \textit{solamente} fermarsi all'interno dell'assorbitore o non farlo, si stanno cioè trascurando i casi in cui il muone rallenta all'interno dell'assorbitore prima di essere assorbito completamente (infatti fisicamente il muone tende a perdere gran parte della sua energia in un urto, quando la sua velocit\`a \`e abbastanza bassa perch\'e l'interazione con i nuclei del materiale diventi importante: se riesce a fare un secondo urto con il materiale dell'assorbitore prima di decadere esso sarà comunque in una posizione molto vicina a quella del primo urti, quindi si può considerare che esso abbia fatto effettivamente un solo urto). La posizione di interazione \`e importante in quanto da essa viene generato l'elettrone del decadimento, che deve comunque interagire con il sistema.
+dati inutili, quindi a meno di un coefficiente moltiplicativo stimabile}. Si è inoltre modellizzato il fenomeno in modo tale che il muone possa \textit{solamente} fermarsi all'interno dell'assorbitore o non farlo, si stanno cioè trascurando i casi in cui il muone rallenta all'interno dell'assorbitore prima di essere assorbito completamente (infatti fisicamente il muone tende a perdere gran parte della sua energia in un punto ben definito, quando la sua velocit\`a \`e abbastanza bassa perch\'e l'interazione con i nuclei del materiale diventi importante. La posizione di interazione \`e importante in quanto da essa viene generato l'elettrone del decadimento, che deve comunque interagire con il sistema.
 
 \subsection{Implementazione del campo magnetico}
 Il campo magnetico dell'esperimento è generato da un solenoide finito a sezione rettangolare. Si è voluto andare ad utilizzare un campo che non fosse uniforme all'interno
@@ -37,7 +37,6 @@ fisicamente sensate le condizioni al contorno assorbenti ai bordi del sistema e 
 all'interno del solenoide ma abbia una dipendenza dalla posizione, come si può vedere nelle Immagini \ref{gr:campo_b@xy} e \ref{gr:campo_b@zy} dove si può vedere la proiezione lungo una
 sezione del solenoide della componente del campo magnetico parallela all'asse del solenoide stesso. Questo processo di risoluzione numerica dell'equazione differenziale
 ha permesso di avere dei valori per il campo magnetico più realistici che dipendano dalla posizione presa in considerazione.
-\textit{\`E stata inoltre fatta una simulazione del campo di una spira di corrente, che grazie al principio di sovrapposizione \`e stata inserita nel campo totale per verificare l'effetto di un'imperfezione nel posaggio dei fili.}
 \inputgraph{campo_b}
 
 \subsection{Decadimento del muone cosmico}
@@ -56,20 +55,16 @@ di condizioni geometriche non favorevoli, per esempio quelli che lasciano segnal
 rivelatore.
 \item Spettro temporale: data tutta la simulazione fatta, è possibile fare un plot del tempo che intercorre tra il passaggio del muone e quello dell'elettrone, riottenendo
 l'esponenziale del tempo di decadimento, corretto con la rotazione dello spin, ovvero il grafico da cui si potrebbe calcolare il fattore di Land\'e. Questo ci permette di calcolare l'effetto di un campo magnetico non uniforme sulla forma del segnale.
-\item Stima del tempo necessario per l'esperimento: sapendo il numero di eventi generati, il numero di segnali che hanno portato ad un trigger valido (in cui il muone ha interagito e l'elettrone \`e stato rilevato) e la frequenza media di arrivo di un muone cosmico si puo' dare una stima del tempo necessario per arrivare ad una certa statistica. Questo conto era gi\`a stato fatto l'anno precendente per la scelta del meteriale e spessore dell'assorbitore, ma \`e stato comunque ripetuto per confronto.
+\item Stima del tempo necessario per l'esperimento: sapendo il numero di eventi generati, il numero di segnali che hanno portato ad un trigger valido (in cui il muone ha interagito e l'elettrone \`e stato rilevato) e la frequenza media di arrivo di un muone cosmico si puo' dare una stima del tempo necessario per arrivare ad una certa statistica. Questo conto era gi\`a stato fatto l'anno precendente per la scelta del materiale e spessore dell'assorbitore, ma \`e stato comunque ripetuto per confronto.
 \end{itemize}
 
-%\inputgraph{sim_fake_b}
+\inputgraph{sim_fake_b}
 
-%\inputgraph{sim_sim_b}
+\inputgraph{sim_sim_b}
 
-%\inputgraph{sim_sim_b_corr}
-
-L'Immagine \ref{gr:sim_fake_b} mostra il risultato di una simulazione con \textit{tanti} eventi nel caso in cui B sia considerato uniformemente uguale a 55~G. Come si puo' vedere il fit corrisponde molto bene al modello.
+L'Immagine \ref{gr:sim_fake_b} mostra il risultato di una simulazione con $5\cdot 10^8$ eventi nel caso in cui B sia considerato uniformemente uguale a 55~G. Nel grafico si possono notare due serie di picchi lungo l'esponenziale, alternanti, una piu' alta (ad esempio in t = 2000 e una piu' bassa (ad esempio in t = 1300). Cio' e' dovuto al fatto che i $\mu^+$ sono polarizzati all'indietro a causa del decadimento del pione, mentre i $\mu^-$ in avanti. 
 
 Nel grafico successivo, Immagine \ref{gr:sim_sim_b}, vediamo la simulazione principale, quella in cui B \`e stato preso dalla simulazione per un solenoide finito e rettangolare. Si pu\`o notare come il modello non coincida completamente con i dati, specialmente a tempi lunghi. Questa discordanza potrebbe portare ad un errore sistematico nella stima del fattore di Land\'e e sara' perci\`o opportuno apportare una correzione al modello che ne tenga conto prima della misura finale.
-
-\textit{Nell'ultimo grafico, Immagine \ref{gr:sim_sim_b_corr}, vediamo il risultato con l'aggiunta di spire di corrente in posizioni casuali, ma in realta' questo grafico non esiste}
 
 \subsubsection{Stima della correzione geometrica alla stima dell'efficienza}
 \`E interessante anche analizzare quanto il fattore geometrico contribuisce all'efficienza diversa dal 100\% calcolata nella Sezione \textit{quella li'}. Ignorando gli elettroni infatti si pu\`o calcolare l'efficienza con una configurazione del tutto simile a quella utilizzata nella reale misura, ma impostando questa volta l'efficienza intrinseca a 1. L'efficienza calcolata risulta essere \textit{beh, non l'ho calcolata, ce l'ha Davide}, valore compatibile con quello misurato sperimentalmente, ad indicare che l'efficienza intrinseca dei rivelatori \`e effettivamente 1.
