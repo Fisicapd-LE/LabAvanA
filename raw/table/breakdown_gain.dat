@@ -1,7 +1,7 @@
 $empty	breakdown	$gain/V_{bias}$
-1 scint. 1 SiPM	28.4274 $\pm$ 0.144604	4.17092 $\pm$ 0.0102153
-1 scint. 2 SiPM	28.4414 $\pm$ 0.151471	4.33002 $\pm$ 0.0111026
-2 scint. 1 SiPM	28.5263 $\pm$ 0.162683	4.0376 $\pm$ 0.0110843
-2 scint. 2 SiPM	28.5584 $\pm$ 0.148473	4.05755 $\pm$ 0.0101714
-3 scint. 1 SiPM	28.7311 $\pm$ 0.189736	4.03412 $\pm$ 0.0128162
-4 scint. 2 SiPM	28.6806 $\pm$ 0.153319	3.95047 $\pm$ 0.0101548
+1 scint. 1 SiPM	28.4 $\pm$ 0.1	4.17 $\pm$ 0.01
+1 scint. 2 SiPM	28.4 $\pm$ 0.2	4.33 $\pm$ 0.01
+2 scint. 1 SiPM	28.5 $\pm$ 0.2	4.04 $\pm$ 0.01
+2 scint. 2 SiPM	28.6 $\pm$ 0.1	4.06 $\pm$ 0.01
+3 scint. 1 SiPM	28.7 $\pm$ 0.2	4.03 $\pm$ 0.01
+4 scint. 2 SiPM	28.7 $\pm$ 0.2	3.95 $\pm$ 0.01
