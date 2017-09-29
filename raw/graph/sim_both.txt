@@ -1,0 +1,1 @@
+Zoom dei due grafici sovrapposti. Il grafico relativo al B costante \`e in blu, mentre quello del B simulato \`e in rosa.

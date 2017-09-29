@@ -1,0 +1,1 @@
+Grafico del tempo di arrivo degli elettroni dalla simulazione effettuata usando il campo magnetico ricavato numericamente per il sistema del solenoide rettangolare finito.

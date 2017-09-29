@@ -1,0 +1,1 @@
+Grafico del tempo di arrivo degli elettroni dalla simulazione effettuata usando un campo magnetico costante e pari a 55~G.
