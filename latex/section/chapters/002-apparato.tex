@@ -3,18 +3,18 @@ L'apparato strumentale consiste in diverse componenti che, assieme, permettono d
 \subsection{Rivelatori}
 I rivelatori utilizzati sono 6 scintillatori plastici modello EJ-200 (della \textit{Eljen Technology}), dalle misure che vengono garantite di fabbrica come
 600x250x10 mm con una precisione fornita come $\pm 0.5$ mm. Su tali scintillatori sono stati scavati dei canali sui quali è stata  posta una fibra ottica il grado di raccogliere
-i fotoni di scintillazione generati dal passaggio di una carica, con un efficienza media del 5\%. Per attaccare la fibra ottica è stato utilizzato del cemento ottico EJ-500; la fibra ottica è stata
-incollata in modo che la distanza che un fotone percorre prima di entrare nella fibra ottica fosse minima considerando che tale fotone può essere gernerato in un punto qualsiasi
+i fotoni di scintillazione generati dal passaggio di una carica. Per attaccare la fibra ottica è stato utilizzato del cemento ottico EJ-500; la fibra ottica è stata
+incollata in modo che la distanza che un fotone percorre prima di entrare nella fibra ottica fosse minima considerando che tale fotone può essere generato in un punto qualsiasi
 dello scintillatore. Poi gli estremi della fibra ottica, uscenti dallo scintillatore, sono stati levigati usando della carta vetro di diverso granularit\`a.\\
 
-Successivamente si è passati al \textit{wrapping} degli scintillatori: affinché siano uitlizzabili gli scintillatori devono essere avvolti in un materiale riflettente
+Successivamente si è passati al \textit{wrapping} degli scintillatori: affinché siano utilizzabili gli scintillatori devono essere avvolti in un materiale riflettente
 (così ch\'e non si perdano fotoni che escono dagli scintillatori) e poi di un materiale assorbente (così ch\'e non entrino fotoni dentro lo scintillatore). Per fare
 ciò si sono usati tre layer differenti di materiali che hanno avvolto ogni singolo scintillatore:
 \begin{itemize}
 \item Foglio di alluminio: come prima cosa si è avvolto lo scintillatore in alluminio, stando attenti che tale alluminio formasse meno pieghe possibili: infatti eventuali pieghe
 possono diminuire il coefficiente di riflessione dell'alluminio e portare a rottura del layer stesso, provocando perdita di fotoni. Per poter posizionare al meglio
 questo layer si è fatta molta attenzione nel tagliare il foglio della misura corretta e nel piegarlo nel miglior  modo attorno allo scintillatore stesso. Particolari
-accorgimenti sono stati necessari per gli spigoli, dove si è fatto un doppio layer di alluminio che permetttesse di chiudere nel miglior modo possibile lo
+accorgimenti sono stati necessari per gli spigoli, dove si è fatto un doppio layer di alluminio che permettesse di chiudere nel miglior modo possibile lo
 scintillatore. Nell'Immagine \ref{img:wrap@a} si può vedere una foto fatta durante la fase di wrapping con alluminio di uno scintillatore, dove si può anche notare la fibra
 ottica. Il wrapping con la carta alluminio è stato fatto lasciando aperta una finestra della dimensione del circuito di lettura in prossimità del punto in cui la fibra
 ottica esce dallo scintillatore.
@@ -31,27 +31,27 @@ nell'Immagine \ref{img:wrapped_scint}.
 
 \item Plastica nera assorbente: Come ultimo layer si sono ritagliati due rettangoli in plastica nera che potessero assorbire i fotoni e sono stati posizionati a coprire
 le due superfici di base degli scintillatori. La plastica è stata poi fissata al resto del wrapping utilizzando del nastro isolante nero, in modo da coprire eventuali buchi
-nella copertura esterna assorbente dello scintillatore. Nell'Immagine \ref{img:wrap@b} (risalente all'anno scorso, il procedimento di wrapping è statto fatto
+nella copertura esterna assorbente dello scintillatore. Nell'Immagine \ref{img:wrap@b} (risalente all'anno scorso, il procedimento di wrapping è statti fatto
 allo stesso modo) si può vedere lo scintillatore una volta finito il wrapping.
 
 % \inputimg{end_wrapping}
 
 \end{itemize}
-Il wrapping è stato comunque eseguito nel modo più omogeneo possibile, in quanto ogni aumento di spessore nel wrapping romperebbe la simmettria del sistema di acquisizione quando un rivelatore viene poggiato sopra un altro.
+Il wrapping è stato comunque eseguito nel modo più omogeneo possibile, in quanto ogni aumento di spessore nel wrapping romperebbe la simmetria del sistema di acquisizione quando un rivelatore viene poggiato sopra un altro.
 
 \subsection{Elettronica di acquisizione}
 
 L'elettronica di acquisizione utilizzata consisteva in:
 \begin{itemize}
-\item Scheda di acquisizione contenente due SiPM (Silicon PhotoMultiplier) (\cite{bib:SiPM}), uno per capo della fibra ottica, per rilevare i fotoni in uscita, e l'elettronica necessaria a farli funzionare e ottenere un segnale elettrico rilevabile. Lo schema elettronico della scheda si pu\`o vedere nell'Immagine \ref{img:schema_pcb}, che si riferisce ad un solo SiPM. Il secondo e' collegato ad un circuito analogo con uscite ed ingressi indipendenti. Nella prima versione della scheda ogni ingresso e uscita si trovava su un cavo separato, ma per ragioni di spazio nelle nuove schede si \`e passati a una configurazione in cui gli ingressi e la massa si trovano su un cavo unico a 5 \textit{canali?}.
+\item Scheda di acquisizione contenente due SiPM (Silicon PhotoMultiplier) (\cite{bib:SiPM}), uno per capo della fibra ottica, per rilevare i fotoni in uscita, e l'elettronica necessaria a farli funzionare e ottenere un segnale elettrico rilevabile. Lo schema elettronico della scheda si pu\`o vedere nell'Immagine \ref{img:schema_pcb}, che si riferisce ad un solo SiPM. Il secondo e' collegato ad un circuito analogo con uscite ed ingressi indipendenti. Nella prima versione della scheda ogni ingresso e uscita si trovava su un cavo separato, ma per ragioni di spazio nelle nuove schede si \`e passati a una configurazione in cui gli ingressi e la massa si trovano su un cavo unico a 5 canali.
 
 \inputimg{schema_pcb}
 
-\item Generatore di tensione \textit{modello} impostato per erogare una tensione di 5~V, usato per l'alimentazione degli operazionali nel circuito, funzionanti a $\pm$5~V
+\item Generatore di tensione impostato per erogare una tensione di 5~V, usato per l'alimentazione degli operazionali nel circuito, funzionanti a $\pm$5~V
 
-\item Generatore di tensione \textit{modello} impostato ad una tensione pi\`u alta, $\sim$ 35~V, usato per dare le tensioni di bias ai SiPM. La tensione precisa viene impostata a valle per ogni SiPM separatamente tramite un sistema di partitori di tensione.
+\item Generatore di tensione impostato ad una tensione pi\`u alta, $\sim$ 35~V, usato per dare le tensioni di bias ai SiPM. La tensione precisa viene impostata a valle per ogni SiPM separatamente tramite un sistema di partitori di tensione.
 
-\item Oscilloscopio digitale Picoscope modello 5000A con una frequenza di acquisizione di 1GHz \cite{bib:datasheet_pico}.
+\item Oscilloscopio digitale Picoscope modello 5000A con una frequenza di acquisizione di 1~GHz \cite{bib:datasheet_pico}.
 
 \item Generatore di coincidenze programmabile a 16 canali di ingresso \cite{bib:articolo_garfa}.
 
