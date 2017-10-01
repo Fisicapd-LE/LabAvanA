@@ -1,0 +1,1 @@
+Guadagno dei due diodi della prima scheda, in funzione della tensione di bias applicata.

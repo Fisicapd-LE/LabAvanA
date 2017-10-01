@@ -1,0 +1,1 @@
+Rate di segnali che hanno dato un trigger.

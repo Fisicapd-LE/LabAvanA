@@ -1,0 +1,1 @@
+Stime dell'efficienza al variare delle configurazioni di trigger, togliendo ad uno ad uno i vari scintillatori.

@@ -1,0 +1,1 @@
+Fit dei segnali raccolti triggerando solo su due diodi

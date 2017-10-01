@@ -1,0 +1,1 @@
+Schema della scheda contenente i SiPM.

@@ -42,7 +42,7 @@ def tab_to_latex(name):
 	tbody_sep = json.load(open("aux/table/tbody_model.json"))
 	
 	try:
-		caption = open("raw/table/" + cleanName + ".txt", "r").readlines()
+		caption = open("raw/table/" + cleanName + ".txt", "r").read()
 	except FileNotFoundError:
 		caption = cleanName.replace("_", " ")
 		

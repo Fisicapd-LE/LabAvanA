@@ -1,0 +1,1 @@
+Plot della simulazione del campo magnetico prodotto dal solenoide sul piano y=0

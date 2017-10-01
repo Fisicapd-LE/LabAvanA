@@ -1,0 +1,1 @@
+Fit dei segnali raccolti triggerando a 50 mV

@@ -1,0 +1,1 @@
+Rate di trigger in funzione della lunghezza dell'intervallo di coicidenza.
