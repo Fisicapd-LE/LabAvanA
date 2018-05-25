@@ -1,0 +1,21 @@
+\subsection{Interazione con i rivelatori}
+Quando viene fatta evolvere la traccia essa potrebbe entrare all'interno dei rivelatori, che possono rivelare tale passaggio. 
+
+Nel modellizzare tale evento si considera l'interazione come un fenomeno esattamente deterministico e non stocastico come realmente è. 
+Per poter comprendere cosa succede quando una traccia attraversa un rivelatore si utilizzano i dati sperimentali, ottenuti come descritto alla Sezione \ref{sec:efficiency}: data la moda della distribuzione sperimentale dei fotoni, essa si interpreta come il numero di fotoni generati dal passaggio di un muone cosmico quando attraversa lo spessore (noto) del rivelatore in direzione perpendicolare alla faccia del rivelatore stesso (ovvero la moda della distribuzione dell'inclinazione). 
+In questo modo si può andare a stimare effettivamente quanti fotoni vengono generati per ogni mm di scintillatore attraversato dal muone (si noti che si stanno trascurando parecchi fattori, come per esempio il diverso assorbimento in diversi punti dell'assorbitore al variare della distanza dalla fibra ottica all'interno dello scintillatore, o la perdita di energia del muone a causa della scintillazione). 
+Così, usando delle identità trigonometriche, è stato possibile trovare lo spazio percorso dal muone all'interno del rivelatore e, noto quest'ultimo, è stato possibile trovare il numero di fotoni che ci si aspetta arrivino ai canali di acquisizione. 
+L'effetto del passaggio degli elettroni \`e stato considerato perfettamente equivalente a quello dei muoni, in assenza di dati.
+
+Il segnale generato \`e usato come confronto con un arbitraria "soglia", a simulare il modulo di coincidenza (la soglia \`e stata impostata a 3.5 fotoni, $\sim$ 50~mV, come impostato nel reale modulo di coincidenza).
+
+Per i muoni si \`e considerata una probabilit\`a trascurabile di fermarsi all'interno del rivelatore. Questo non rispecchia perfettamente la realt\`a, ma \`e stato considerato che questa probabilit\`a \`e bassa e  non porterebbe a eventi rilevati da Arietta, in quanto gli elettroni difficilmente produrrebbero il segnale adatto. \`E per\`o stato tenuto conto dell'attenuazione in energia durante il passaggio dei muoni.
+
+Diversa \`e invece la situazione degli elettroni: si \`e infatti visto sperimentalmente che gli elettroni emessi dal decadimento del muone hanno una probabilita' non trascurabile di decadere nella plastica dello scintillatore. Per queste particelle si \`e quindi simulato un range, in funzione dell'energia di uscita dall'assorbitore, basandosi su un grafico dal datasheet del rivelatore, che mostra il range degli elettroni circa proporzionale alla loro energia, con formula
+
+\begin{equation}
+	R(E) \approx 40 \frac{mm}{MeV}\cdot E
+	\label{eq:range_elec}
+\end{equation}
+
+Da prove con la simulazione si vede che la dipendenza del rate calcolato da questa formula \`e bassa, minore di altre incertezze intrinseche della simulazione (come la distribuzione dell'energia dei muoni).

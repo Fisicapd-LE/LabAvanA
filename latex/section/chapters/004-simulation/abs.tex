@@ -1,0 +1,8 @@
+\subsection{Interazione con l'assorbitore}
+L'interazione con l'assorbitore viene modellizzata completamente grazie ai dati tabulati di ESTAR del NIST (elettroni) e della sezione AtomicNuclearProperties del PDG (muoni). In queste tabelle infatti sono presenti sia i dati di range che i dati dello stopping power, entrambi in funzione dell'energia della particella.
+
+L'interazione di una particella nell'assorbitore funziona perci\`o cos\`i: per prima cosa viene calcolato il range basandosi sull'energia di entrata. 
+Se viene rilevato che la particella ha abbastanza energia per uscire \`e necessario calcolare l'energia di uscita\footnote{Nota: data l'assunzione mostrata al punto precendente secondo quale i muoni non possono fermarsi negli scintillatori, l'energia di uscita dei muoni non e' in realt\`a utile e non viene quindi calcolata}. 
+Viene quindi applicato l'algoritmo di Eulero per avere una decente stima dell'energia finale.
+
+Data la non linearit\`a del range dei muoni in funzione dell'energia , la maggior parte dei muoni tenderebbe a fermarsi nei primi millimetri di assorbitore. Questo per\`o \`e contrastato dal minimo di energia dovuto al passagio nel cemento, che quindi rende la distribuzione piatta. Questo \`e da aspettarsi, in quanto non ha senso fisico che i muoni abbiano un picco di decadimento all'inizio dell'oggetto. Questa caratteristica \`e stata presa come vincolo, fittando la distribuzione del decadimento dei muoni nel cemento in modo che la distribuzione nell'assorbitore fosse pressoc\'e uniforme.
