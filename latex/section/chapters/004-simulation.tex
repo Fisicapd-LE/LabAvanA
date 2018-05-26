@@ -42,28 +42,35 @@ l'esponenziale del tempo di decadimento, corretto con la rotazione dello spin, o
 \item Confronto della rate con quella sperimentale: \`e possibile confrontare la rate calcolata dalla simulazione con quella ottenuta durante la misura della vita media dei muoni. Questo ci permette di verficare che non ci siano inefficienze evidenti che non abbiamo considerato che potrebbero distorgere il risultato.
 \end{itemize}
 
-\inputgraph{sim_fake_b}
+\inputgraph{ball_1e9}
+\subsubsection{Spettro temporale in campo magnetico}
+L'Immagine \ref{gr:ball_1e9} mostra il risultato di una simulazione con $1\cdot 10^9$ eventi nel caso in cui B sia considerato uniformemente uguale a 55~G e nel caso in cui il campo magnetico viene simulato. 
+Si pu\`o vedere dal grafico come il campo magnetico influisca poco sui $\mu^-$, mentre produce l'effetto desiderato sui $\mu^+$. 
+Da un fit sull'istogramma con la funzione
 
-\inputgraph{sim_sim_b}
+\begin{equation}
+	p(t) = K e^{\frac{x}{\tau}}\left(1 + a\cdot\cos(\omega x + \varphi)\right)
+	\label{eq:sim_fit}
+\end{equation}
 
-\inputgraph{sim_both}
-\subsubsection{Spettro temporale}
-L'Immagine \ref{gr:sim_fake_b} mostra il risultato di una simulazione con $5\cdot 10^8$ eventi nel caso in cui B sia considerato uniformemente uguale a 55~G. Nel grafico si possono notare due serie di picchi lungo l'esponenziale, alternanti, una più alta (ad esempio in t = 1300~ns) e una più bassa (ad esempio in t = 2000~ns). Ci\`o \`e dovuto al fatto che i $\mu^+$ sono polarizzati all'indietro a causa del decadimento del pione, mentre i $\mu^-$ in avanti. Un muone con elicit\`a negativa avra probabilit\`a massima di produrre un elettrone rilevabile quando la fase della rotazione sar\`a un multiplo di $2\pi$, ovvero nella serie di picchi pari, mentre uno con elicit\`a positiva l'avr\`a in quelli dispari, quando la fase \`e uguale a $\pi+2k\pi$. Dato il maggior numero di muoni positivi nella regione temporale pi\`u significativa (dopo i 1000~ns) e la polarizzazione prevalentemente negativa di questi ultimi, si avr\`a l'ampiezza massima nella serie pari. Il fatto che si vedano due serie alternanti sono anche dovute alla non perfetta sinusoide descritta dall'istogramma: due sinusoidi in opposizione di fase, come ci si aspetterebbe dalla teoria, infatti andrebbero a sommarsi perfettamente in una sinusoide di ampiezza minore. Nel nostro sistema per\`o la parte sensibile al passaggio degli elettroni non occupa l'intero semispazio superiore, bens\`i un rettangolo che sottende un angolo solido $<2\pi$ sr. A causa di ci\`o l'intervallo di fase per cui gli elettroni vengono rilevati \`e minore di $\pi$, e la parte positiva dell'oscillazione ha una larghezza minore, impedendo che le due curve si sovrappongano esattamente.\\
-Questo, se verr\`a notato anche nell'esperimento reale, significa che dovranno essere prese precauzioni particolari durante il fit, per evitare di introdurre errori sistematici usando una funzione che non descrive esattamente il modello. 
+si ottiene un valore per a di $(9.1 \pm 0.3)$\%, mentre si ottiene $(3.10 \pm 0.08)$\% per $\varphi$. Quest'ultimo valore \`e da aspettarsi, in quanto gli elettroni hanno probabilit\`a massima si essere emessi in direzione opposta a quella dello spin, rendendo il valore atteso $\pi$.
 
-Nel grafico successivo, Immagine \ref{gr:sim_sim_b}, vediamo la simulazione principale, quella in cui B \`e stato preso dalla simulazione per un solenoide finito e rettangolare. I due grafici risultano molto simili, in quanto l'assorbitore \`e comunque posto al centro del solenoide, dove il campo magnetico \`e il pi\`u uniforme possibile (dalla simulazione si pu\`o notare come il campo magnetico sia pressoch\'e uniforme fino ai $\sim$350~mm, 150 grid points nelle immagini \ref{gr:campo_b@xy} e \ref{gr:campo_b@zy}). Si pu\`o vedere per\`o nell'Immagine \ref{gr:sim_both} come in realt\`a la non uniformit\`a del campo causi una leggera diminuzione dell'ampiezza dell'oscillazione.
+Dal grafico si pu\`o anche notare come le due distribuzioni siano pressoch\'e identiche fino ad alti t, ed anche l\`a la discrepanza pu\`o essere assimilata ad errori statistici. Non \`e chiaro se questa uguaglianza \`e reale o dovuta a una statistica insufficiente.
 
 \subsubsection{Informazioni varie}
-Chiedendo durante la simulazione di stampare la posizione della morte degli elettroni \`e possibile costruire l'istogramma di Figura \ref{edeath}. Si pu\`o notare come la maggior parte degli elettroni muoia dentro l'assorbitore, ma che una buona percentuale ($\sim$11\%) muore anche negli scintillatori
+Chiedendo durante la simulazione di stampare la posizione della morte degli elettroni \`e possibile costruire l'istogramma di Figura \ref{gr:edeath}. Si pu\`o notare come la maggior parte degli elettroni muoia dentro l'assorbitore, ma che una buona percentuale ($\sim$11\%) muore anche negli scintillatori
 
 \inputgraph{edeath}
 
 \subsubsection{Stima della correzione geometrica alla stima dell'efficienza}
 \`E interessante anche analizzare quanto il fattore geometrico contribuisce all'efficienza diversa dal 100\% calcolata nella Sezione \ref{sec:eff_corr}. Ignorando gli elettroni infatti si pu\`o calcolare l'efficienza con una configurazione del tutto simile a quella utilizzata nella reale misura, ma impostando questa volta l'efficienza intrinseca a 1.
 
-\subsubsection{Stima della rate}
+\subsubsection{Stima del rate}
 In una sezione precedente abbiamo calcolato la rate di eventi validi a partire dalle nostre misure della vita media dei muoni. 
-\`E possibile fare una stima basandosi sui risultati della simulazione: data infatti la frazione di eventi simulati che vengono rilevati come validi, uniti ai dati sperimentali sui muoni cosmici presi dal PDG, si pu\`o associare un valore per la rate di eventi.
+\`E possibile fare una stima basandosi sui risultati della simulazione: data infatti la frazione di eventi simulati che vengono rilevati come validi, uniti ai dati sperimentali sui muoni cosmici presi dal PDG (\cite{bib:Patrignani:2016xqp}), si pu\`o associare un valore per la rate di eventi.
+
+L'output della simulazione usata \`e mostrato in Figura \ref{gr:sim_30G}
+\inputgraph{sim_30G}
 
 La frequenza media di muoni integrata su tutti gli angoli \`e $130 \frac{\mathrm{muoni}}{m^2 s}$. La superficie che noi consideriamo \`e di 1.40~m x 0.70~m. 
 La frazione di muoni che passa la schermatura in cemento dell'edificio viene presa dalla simulazione come 0.92\%.

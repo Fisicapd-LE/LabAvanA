@@ -1,0 +1,1 @@
+Output della simulazione nel caso del campo magnetico costante o simulato

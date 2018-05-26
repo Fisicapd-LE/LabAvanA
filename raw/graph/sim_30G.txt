@@ -1,0 +1,1 @@
+Output della simulazione da 30 miliardi di eventi usata per la misura del rate
