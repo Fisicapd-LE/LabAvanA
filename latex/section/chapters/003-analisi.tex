@@ -58,14 +58,23 @@ Si riportano per completezza nella Tabella \ref{tab:breakdown_gain} i dati relat
 \subsection{Stima dell'efficienza dell'apparato}
 \label{sec:efficiency}
 \subsubsection{Efficienza sperimentale}
-\`E stata fatta una seconda serie di misure per poter discutere dell'efficienza del sistema di acquisizione. In queste misure il rivelatore \`e stato posto all'interno del solenoide, insieme a quelli gi\`a analizzati dal gruppo dell'anno precedente. Collegando i tre rivelatori precedenti al generatore di coincidenze, si sono fatte misure del segnale rilevato dallo scintillatore in esame in corrispondenza del passaggio di un muone reale, indicato dalla presenza del segnale in tutti e tre gli altri (si è impostata la soglia del trigger a -50~mV, che indica in pratica una raccolta superiore a un fotone in modo da escludere parte dei fotoni termici). Dato l'elevato numero di rivelatori in coincidenza (4: ogni rivelatore quando l'esperimento sarà terminato avrà due diodi, nel setup che è stato fatto l'anno scorso ci sono due rivelatori con un solo diodo funzionante e un rivelatore con entrambi, posto tra i due precedenti), ci si aspetta che il numero di coincidenze casuali sia molto piccolo\footnote{nella sezione successiva si vedr\`a come triggerando su 4 diodi il rate di trigger non dipenda dalla lunghezza della finestra di coincidenza, il che indica che pochi trigger sono effettivamente casuali}.
+\`E stata fatta una seconda serie di misure per poter discutere dell'efficienza del sistema di acquisizione. In queste misure il rivelatore \`e stato posto all'interno del solenoide, insieme a quelli gi\`a analizzati dal gruppo dell'anno precedente. Collegando i tre rivelatori precedenti al generatore di coincidenze, si sono fatte misure del segnale rilevato dallo scintillatore in esame in corrispondenza del passaggio di un muone reale, indicato dalla presenza del segnale in tutti e tre gli altri (si è impostata la soglia del trigger a 3.5 fotoni equivalenti, contati a partire dalla calibrazione del guadagno nella sezione precedente, in modo da escludere parte dei "fotoni termici"). Dato l'elevato numero di rivelatori in coincidenza (4: ogni rivelatore quando l'esperimento sarà terminato avrà due diodi, nel setup che è stato fatto l'anno scorso ci sono due rivelatori con un solo diodo funzionante e un rivelatore con entrambi, posto tra i due precedenti), ci si aspetta che il numero di coincidenze casuali sia molto piccolo\footnote{nella sezione successiva si vedr\`a come triggerando su 4 diodi il rate di trigger non dipenda dalla lunghezza della finestra di coincidenza, il che indica che pochi trigger sono effettivamente casuali}.
 
 Nelle Immagini \ref{gr:eff_simple} si possono vedere i conteggi effettuati dallo scintillatore sotto studio ogni volta che il sistema degli altri 3 scintillatori ha triggerato.
 
 \inputgraph{eff_simple}
 %!!!!!!!!!!!!GRAFICO LANDAU!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-In questo grafico \`e stata anche fatto un fit con una funzione di Landau, in modo da ottenere i parametri del segnale lasciato da una MIP (minimum ionization particle), che con la nostra configurazione di rivelatori lascia con probabilit\`a massima 7 fotoni (è il parametro fittato della Landau). \`E stata utilizzata la funzione di Landau in quanto essa è la funzione che descrive i processi di ionizzazione come quello che ci permette di rivelare la particella nel caso essa non si fermi all'interno del rivelatore.
+In questo grafico \`e stata anche fatto un fit con una funzione di Landau, in modo da ottenere i parametri del segnale lasciato da una MIP (minimum ionization particle), che con la nostra configurazione di rivelatori lascia con probabilit\`a massima un segnale di (101.6 $\pm$ 0.8)~mV (è il parametro fittato della Landau, corrispondente circa a 7 fotoni equivalenti). \`E stata utilizzata la funzione di Landau in quanto essa è la funzione che descrive i processi di ionizzazione come quello che ci permette di rivelare la particella nel caso essa non si fermi all'interno del rivelatore:
+
+\begin{equation}
+	\rho\left(x\right) = \frac{1}{\pi}\int_0^\infty e^{-t\log(t)-xt}\sin(\pi t) \dd t
+	\label{eq:landau}
+\end{equation}
+
+\inputtab{landau_mpv}
+
+Come si pu\`o vedere dalla Tabella~\ref{tab:landau_mpv}, lo scintillatore C ha evidenti problemi di generazione in quanto la probabilit\`a massima di produzione di fotoni \`e la met\`a degli altri scintillatori.
 
 Per confronto, su uno dei due diodi si sono fatte anche misure togliendo uno alla volta i rivelatori in coincidenza. Studiando il diodo due dello scintillatore 1 e rimuovendo la richiesta che triggeri lo scintillatore subito sotto quello studiato la differenza tra le due efficienze non è molta, perché è molto piccola la quantità di falsi eventi causati da fotoni termici. Il grafico dei conteggi risulta della stessa forma rispetto a quello presentato in precedenza. Andando invece a togliere il trigger dallo scintillatore più lontano da quello studiato l'efficienza diminuisce in quanto cambia il fattore geometrico (il fattore che tiene conto degli eventi che non vengono visti non per inefficienza del rivelatore stesso ma perché la traiettoria dei muoni è tale da farli entrare in tutti i rivelatori di trigger ma non in quello studiato. Togliendo i due diodi del rivelatore centrale si vede un crollo dell'efficienza a $\sim$ 60\%. Questo \`e perch\'e con soli due rivelatori in coincidenza c'\`e una probabilit\`a non trascurabile che due segnali termici siano avvenuti contemporaneamente, simulando un muone che non \`e mai passato per il rivelatore in esame (questi eventi non sono trascurabili in quanto, tra l'altro, permettevano di visualizzare le altre gaussiane nello studio dell'amplificazione trattato nella sezione precedente). Togliendo questo trigger, cambia anche la forma dei conteggi: infatti oltre alla Landau si può vedere anche una distribuzione poissoniana legata alla generazione casuale termica, questo grafico si può vedere nell'Immagine \ref{gr:eff_no@2}. Andando invece a rimuovere il trigger su due diversi scintillatori si vede un calo dell'efficienza comunque considerevole e si può sempre riconoscere la poissoniana nel grafico dei conteggi come si vede nell'Immagine \ref{gr:eff_no@13}.\\
 \inputgraph{eff_no}
@@ -124,12 +133,24 @@ Una misura simile è stata fatta andando a triggerare sui 3 scintillatori dispon
   n_\mu = q \cdot k = (8.62 \pm 0.05) Hz
 \end{equation}
 \inputgraph{rate_4}
-Questo rate è visibilmente più basso del precedente: ciò avviene a causa di errori sistematici: probabilmente quando si taglia la poissoniana si continuano a mantenere eventi nel caso a trigger su due scintillatori, oppure lo scintillatore numero 2 è leggermente spostato rispetto all'1 e al 3, provocando una diminuzione del rate di eventi.
+Questo rate è visibilmente più basso del precedente: ciò avviene a causa di errori sistematici: probabilmente quando si taglia la poissoniana si continuano a mantenere eventi "termici" nel caso a trigger su due scintillatori, oppure lo scintillatore numero 2 è leggermente spostato rispetto all'1 e al 3, provocando una diminuzione del rate di eventi.
 Inoltre si evince come l'efficienza è di:
 \begin{equation}
   \varepsilon = (100.2 \pm 0.6)\%
 \end{equation}
 perfettamente in linea con quella trovata con il metodo precedente (il valore risulta superiore a 100\% perché non si è tagliata la poissoniana in quanto decisamente molto più bassa rispetto al caso precedente, ma comunque non nulla, si \`e ottenuto un grafico molto simile a quelli di Immagine \ref{gr:eff_simple}).
+
+Dati i problemi tecnici citati in precedenza (tra cui ulteriormente la dissaldatura e riparazione del contatto del cavo di output del SiPM 2 dello scintillatore D, lo scintillatore C con un lemo del diodo C1 tenuto insieme dal nastro isolante, viti spanate, a cui si \`e sommata la necessit\`a di usare in fase di misura al posto dello scintillatore D, ampiamente caratterizzato, lo scintillatore C ereditato dall'anno precedente con due diodi funzionanti) si \`e deciso di procedere a una fase di ricalibrazione dei guadagni, efficienze e soglie di trigger imposte.
+
+Questo \`e stato reso necessario dall'essersi accorti che i due diodi dello scintilaltore C presentavano un rate termico molto elevato. Si \`e pertanto deciso di diminuire il voltaggio di polarizzazione applicato a tale scintillatore per diminuire il rate dei falsi eventi.
+
+La procedura seguita \`e stata quella esposta in precedenza per tutti i passaggi, tranne che nel calcolo dell'efficienza in quanto dai dati acquisiti in passato si era  potuto stabilire come la configurazione a "sandwich" (consistente nel posizionare lo scintillatore in esame in mezzo a quelli di trigger) fosse gi\`a in grado di abbattere efficacemente il problema legato alla geometria dell'apparato, rendendo superflua la simulazione del fattore geometrico.
+
+\inputtab{eff_new}
+
+Nella tabella \ref{tab:eff_new} si vedono le efficienze di acquisizione degli scintillatori. Tali efficienze sono nettamente inferiore a quelle mostrate in precedenza in quanto queste si riferiscono ad entrambi i diodi dello scintillatore in AND ed inoltre il taglio \`e stato eseguito a 3.5 fotoni, analogamente a quanto fatto nelle misure vere e proprie.
+
+\inputtab{diode_guide}
 
 \subsection{Studio di Arietta}
 \input{section/chapters/003-analisi/arietta.tex}

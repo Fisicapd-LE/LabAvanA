@@ -1,0 +1,1 @@
+Parametri del fit con Landau dei rivelatori usate durante la presa dati. C2* rappresenta la misura su C2 prima di aver ottimizzato il voltaggio di bias.
