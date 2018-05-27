@@ -18,15 +18,15 @@ In pratica sono stati raccolti due campioni differenti: un campione esteso per t
 Le grandezze calcolate si possono leggere nella Tabella~\ref{tab:linearity} dove sono state fatte le interpolazioni per i tre campioni e se ne presentano coefficienti per l'interpolazione lineare ($m$ e $q$) e quelli per l'interpolazione quadratica ($m'$, $q'$, $\varepsilon$).\\
 \inputtab{linearity}
 
-Nella Tabella~\ref{tab:Ftest} si riportano invece gli esiti dell'F-test, in particolare il numero di gradi di libertà di numeratore e denominatore ($d_N$ e $d_D$), l'esito dell'F-test ($F$) e la probabilità corrispondete ($P_F$). La probabilità serve nel senso che, per esempio, una $P_F = 0.99$ significa che che si può rigettare con una confidenza del 99\% l'ipotesi secondo cui i modelli sono equivalenti, e quindi c'è necessità di utilizzare il modello più complesso (cioè con un parametro aggiuntivo).\\
+Nella tabella~\ref{tab:Ftest} si riportano invece gli esiti dell'F-test, in particolare il numero di gradi di libertà di numeratore e denominatore ($N_N$ e $N_D$), l'esito dell'F-test ($F$) ed il paramero della distribuzione di Fischer tale per cui la probabilità sia uguale al 95\% ($\bar{F}$). Questo  significa che se il valore di $F$ è superiore al valore di $\bar{F}$ allora si potrà rigettare con una confidence level del 95\% l'ipotesi che i due modelli siano equivalenti, e  sarà quindi necessaria l'introduzione del termine di secondo grado per descrivere il campione.\\
 \inputtab{Ftest}
 
-D queste tabelle si evince come, effettivamente, ci sia un problema di non linearità a bassi tempi. Infatti, dalla stima dei coefficienti di secondo ordine, si vede come il $\mathcal{C}1$, che si ferma a $1.79 \mu\text{s}$ abbia un coefficiente molto compatibile con lo zero mentre gli altri due campioni, che arrivano fino a 215~ns hanno un coefficiente scarsamente compatibile con zero.\\
+Da queste tabelle si evince come, effettivamente, ci sia un problema di non linearità a bassi tempi. Infatti, dalla stima dei coefficienti di secondo ordine, si vede come il $\mathcal{C}_1$, che si ferma a $1.79 \mu\text{s}$ abbia un coefficiente molto compatibile con lo zero mentre gli altri due campioni, che arrivano fino a 215~ns hanno un coefficiente scarsamente compatibile con zero.\\
 
-Guardando il risultato dell'F-test si vede che nel caso del primo campione non è possibile rigettare l'ipotesi di linearità nemmeno di $\sigma$, mentre il secondo campione in particolare rigetta la linearità di Arietta con un livello di confidenza pari al 99.4\%, decisamente alto.\\
+Guardando il risultato dell'F-test si vede che nel caso del primo campione non è assolutamente possibile rigettare l'ipotesi di linearità, mentre il secondo campione in particolare rigetterebbe la linearità di Arietta anche con un livello di confidenza pari al 99.4\%, decisamente alto.\\
 
 
-Per scorrevolezza di lettura non si trovano qui tutte le interpolazioni fatte, che si possono trovare nelle appendici, ma si riportano esclusivamente le interpolazioni fatte su $\mathcal{C}2$  che rivelano la non linearità di Arietta a bassi tempi, che si possono vedere nell'Immagine~\ref{gr:tempi_bassi}.\\
+Per scorrevolezza di lettura non si trovano qui tutte le interpolazioni fatte, che si possono trovare nelle appendici, ma si riportano esclusivamente le interpolazioni fatte su $\mathcal{C}_2$  che rivelano la non linearità di Arietta a bassi tempi, che si possono vedere nell'Immagine~\ref{gr:tempi_bassi}.\\
 \inputgraph{tempi_bassi}
 
 Per ovviare al problema della non linearità si è capito (guardando i grafici) che le non linearità sorgono nel momento in cui i tempi diventano inferiori ai 335~ns, quindi si è deciso di ripetere le interpolazioni fatte per i campioni 1, 2 e 3 utilizzando solamente i dati sopra tale soglia, che formano il campione $\mathcal{C}_f$ le cui proprietà si possono vedere nella Tabella~\ref{tab:linearity}. Nell'immagine \ref{gr:final_calibration} si possono vedere le interpolazioni effettuate su tale campione, che effettivamente ha passato bene l'F-test.\\
@@ -34,7 +34,7 @@ Per ovviare al problema della non linearità si è capito (guardando i grafici) 
 
 Dato questo problema che si è trovato con la linearità di Arietta, in tutte le misure effettuate utilizzando tale scheda di acquisizione sono state tagliate le misura per tempi inferiori a 335~ns in quanto affette da un errore sistematico che non si è in grado di correggere.\\
 
-Le misure finali della calibrazione indicano che i coefficienti  di calibrazione sono:
+Le misure finali della calibrazione indicano che i coefficienti di calibrazione sono:
 \begin{equation}
   m = (14.994 \pm 0.007) \text{ns/cycles} \hspace{2cm} q = (6 \pm 2) \text{ns}
 \end{equation}
