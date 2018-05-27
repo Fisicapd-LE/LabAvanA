@@ -22,7 +22,7 @@ Da quanto si vede dal grafico, il valore sul tempo di decadimento dei muoni è m
 \begin{equation}
   \tau = (2.21 \pm 0.03) \mu\text{s}
 \end{equation}
-da confrontare con il valore in letteratura\footnote{C. Patrignani et al. (Particle Data Group), Chin. Phys. C, 40, 100001 (2016) and 2017 update} di $(2.1969811 \pm 0.0000022) \mu$s.\\
+da confrontare con il valore in letteratura~\cite{bib:Patrignani:2016xqp} di $(2.1969811 \pm 0.0000022) \mu$s.\\
 
 A questo dato, a cui viene associato l'errore statistico, andrebbe associata anche una stima delle incertezze sperimentali. In particolare, si è analizzata l'incertezza sperimentale legata alla calibrazione che potrebbe non essere corretta (infatti naturalmente i parametri di calibrazione utilizzati sono associate ad un'incertezza). Per  stimare l'errore sistematico legato a tale fenomeno si è deciso di fare un'ulteriore interpolazione, siimile a quella appena fatta, ma senza aver calibrato il  grafico. A questo punto i parametri di calibrazione sono stati utilizzati per trasformare la $\tau$ in \textit{clock cycles} così trovata in nanosecondi. L'operazione a posteriori ha permesso di propagare gli errori sull'operazione di cambio di unità di misura, e quindi avere una stima dell'incertezza legata a tale trasformazione. Tenendo conto degli errori sui parametri di calibrazione interpolati e della loro correlazione, tale grandezza risulta di 2~ns, ampiamente trascurabile rispetto all'incertezza statistica dell'ordine della decina di nanosecondi.
 
@@ -36,15 +36,15 @@ Quindi, si è ripetuta l'analisi precedentemente fatta solamente con i dati racc
 
 I dati solamente dei 13 giorni utilizzati si possono vedere nel grafico \ref{gr:for_rate}, dove l'interpolazione è stata fatta con la stessa funzione descritta precedentemente. Si è in particolare interessati al parametri $N_{\mu+}$, che rappresenta il numero di eventi registrati nell'intervallo di tempo analizzato. Data la legge di decadimento esponenziale, si può trovare il numero di eventi totali una volta noti gli eventi tra un tempo $t_\text{min}$ e un tempo $t_\text{max}$  tramite la formula:
 \begin{equation}
-  \bar{N_{\mu+}} = \frac{N_{\mu+}}{e^{\frac{t_\text{min}}{\tau}}-e^{\frac{-t_\text{max}}{\tau}}}
+  \bar{N}_{\mu+} = \frac{N_{\mu+}}{e^{\frac{t_\text{min}}{\tau}}-e^{\frac{-t_\text{max}}{\tau}}}
 \end{equation}
 L'utilizzo di questa formula permette di avere una stima del numero di muoni che si preveda si sarebbero visti se il sistema di acquisizione fosse perfetto e permettesse di vedere decadimenti a qualsiasi tempo. Con questa formula, si arriva ad una stima di:
 \begin{equation}
-  \bar{N_{\mu+}} = (1.63 \pm 0.01) \cdot 10^4
+  \bar{N}_{\mu+} = (1.63 \pm 0.01) \cdot 10^4
 \end{equation}
-muoni positivi. Questo valore si vuole utilizzare per ottenere il rate di muoni incidenti sull'apparato, che si può calcolare considerando che quanto appena trovato è il numero di muoni positivi, ed il rapporto tra i muoni positivi e i muoni negativi (che non si possono vedere con l'apparato utilizzato per i problemi discussi sopra) è tra 1.25 e 1.30 a 1\footnote{Il dato, preso dal PDG booklet del 2016, è proprio tra  1.25 e 1.30, quindi si è deciso di considerare come rapporto $1.275\pm0.025$}. Quindi, si ha che il numero totale di muoni che si sarebbero visti se si fosse stati in grado di vedere anche i muoni negativi, sarebbe stato:
+muoni positivi. Questo valore si vuole utilizzare per ottenere il rate di muoni incidenti sull'apparato, che si può calcolare considerando che quanto appena trovato è il numero di muoni positivi, ed il rapporto tra i muoni positivi e i muoni negativi (che non si possono vedere con l'apparato utilizzato per i problemi discussi sopra) è tra 1.25 e 1.30 a 1\footnote{Il dato, preso da~\cite{bib:Patrignani:2016xqp}, è proprio tra  1.25 e 1.30, quindi si è deciso di considerare come rapporto $1.275\pm0.025$}. Quindi, si ha che il numero totale di muoni che si sarebbero visti se si fosse stati in grado di vedere anche i muoni negativi, sarebbe stato:
 \begin{equation}
-  \bar{N_{\mu}} = (2.40 \pm 0.04) \cdot 10^4
+  \bar{N}_{\mu} = (2.40 \pm 0.04) \cdot 10^4
 \end{equation}
 Conoscendo poi il tempo nel quale si sono raccolti questi dati è possibile andare a stimare il rate di eventi che abbiano caratteristiche (dal punto di vista dell'energia del muone, di quella dell'elettrone e delle loro direzioni) che il sistema di acquisizione sarebbe in grado di registrare se non avesse problemi dal punto di vista temporale:
 \begin{equation}
