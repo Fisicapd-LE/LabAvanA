@@ -1,1 +1,1 @@
-Dati raccolti presentati in un grafico logaritmico
+Dati raccolti presentati in un grafico in scala logaritmica

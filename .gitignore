@@ -1,5 +1,5 @@
 ./*.pdf
-backup/*.pdf
+**/*.pdf
 latex/graph/*.tex
 latex/img/*.tex
 latex/table/*.tex
@@ -8,3 +8,7 @@ latex/section/appendix.tex
 latex/section/code.tex
 info/publish
 **/*.aux
+**/*.fls
+**/*.log
+**/*.fdb_latexmk
+**/*.toc
