@@ -12,3 +12,10 @@ info/publish
 **/*.log
 **/*.fdb_latexmk
 **/*.toc
+**/*.out
+latex/preamble/macros/macros_general.tex
+latex/preamble/macros/macros_lualatex.tex
+latex/preamble/macros/macros_pdflatex.tex
+latex/preamble/packages/packages_general.tex
+latex/preamble/packages/packages_lualatex.tex
+latex/preamble/packages/packages_pdflatex.tex
