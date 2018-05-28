@@ -18,9 +18,69 @@ def compose_line(fields):
 def compose_title(fields):
 	title_sep = json.load(open("aux/table/title_model.json"))
 	
-	write_title = title_sep['before']
-	write_title += title_sep['middle'].join(fields)
-	write_title += title_sep['after']
+	labels = []
+	for pos, field in enumerate(fields):
+		levels = field.split("#")
+		for level, label in enumerate(reversed(levels)):
+			if len(labels) == level:
+				labels.append([])
+				
+			if pos > len(labels[level]):
+				for i in range(len(labels[level]), pos):
+					labels[level].append(None)
+			
+			if label == "":
+				label = None
+				
+			labels[level].append(label)
+			
+	
+	
+	write_title = ""
+	for line, level in reversed(list(enumerate(labels))):
+		fields = []
+		lines = ""
+		previousLabel = level[0]
+		length = 1
+		pos = 1
+		for label in level[1:]:
+			pos += 1
+			
+			if label == previousLabel and previousLabel != None:
+				length += 1
+				continue
+				
+			field = ""
+			if previousLabel != None:
+				if length == 1:
+					field = previousLabel
+				else:
+					field = "\multicolumn{" + str(length) + "}{c}{" + str(previousLabel) + "}"
+					lines += "\cmidrule(lr){" + str(pos - length) + "-" + str(pos - 1) + "}\n"
+				
+			fields.append(field)
+				
+			previousLabel = label
+			length = 1
+			
+		pos += 1
+		
+		field = ""	
+		if previousLabel != None:
+			if length == 1:
+				field = previousLabel
+			else:
+				field = "\multicolumn{" + str(length) + "}{c}{" + str(previousLabel) + "}"
+				lines += "\cmidrule(lr){" + str(pos - length) + "-" + str(pos - 1) + "}\n"
+		fields.append(field)
+		
+		write_title += title_sep['before']
+		write_title += title_sep['middle'].join(fields)
+		write_title += title_sep['after']
+		write_title += "\n"
+		
+		if line != 0:
+			write_title += lines
 	
 	return write_title
 	

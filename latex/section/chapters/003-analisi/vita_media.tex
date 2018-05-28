@@ -1,54 +1,84 @@
-Una stima sulla vita media dei muoni è stata effettuata lasciando per più tempo possibile in sistema in acquisizione. Si è settato il trigger in maniera tale che venisse inviato un segnale alla scheda di accquisizione di tempi Arietta quando davano segnali sopra la soglia  impostata (di tre fotoni) tutti e quattro i diodi posti sui due scintillatori sopra l'assorbitore, e come veto si è impostato in "or" il segnale dei due diodi presenti nello scintillatore posto sotto l'assorbitore, con soglia messa sempre a tre fotoni. La presa dati si è svolta in 17 giorni non continuativi: prima dall'11 al 19 gennaio e successivamente dal 24 al 31 gennaio. Il motivo dell'interruzione è stato di natura tecnica, in quanto è stata staccata l'alimentazione a nostra insaputa nei laboratori e quindi è stato necessario riavviare il sistema di acquisizione. Si sono raccolti in totale 14634 segnali.
+Una stima sulla vita media dei muoni è stata effettuata lasciando per più tempo possibile in sistema in acquisizione. 
+Si è settato il trigger in maniera tale che venisse inviato un segnale alla scheda di accquisizione di tempi Arietta quando davano segnali sopra la soglia  impostata (di tre fotoni) tutti e quattro i diodi posti sui due scintillatori sopra l'assorbitore, e come veto si è impostato in "or" il segnale dei due diodi presenti nello scintillatore posto sotto l'assorbitore, con soglia messa sempre a tre fotoni. 
+La presa dati si è svolta in 17 giorni non continuativi: prima dall'11 al 19 gennaio e successivamente dal 24 al 31 gennaio. 
+Il motivo dell'interruzione è stato di natura tecnica, in quanto è stata staccata l'alimentazione a nostra insaputa nei laboratori e quindi è stato necessario riavviare il sistema di acquisizione. Si sono raccolti in totale 14634 segnali.
 
-\subsection{Vita media}
-Prima di poter calcolare la vita  media, è opportuno ricordare i problemi che si possono incontrare in tale studio. Come prima cosa, i dati che si sono raccolti sono dati provenienti da fondo (sempre presente),  muoni positivi e muoni negativi. I muoni positivi si fermano all'interno dell'assorbitore, decadono con una costante caratteristica di decadimento, ed emettono un elettrone che (quando c'è stato un  trigger del sistema) attraversa gli scintillatori. I muoni negativi, invece, quando si fermano all'interno dell'assorbitore, tendono ad essere catturati dal materiale stesso, emettendo un elettrone (che scalzano dall'atomo da cui sono stati catturati) con un tempo caratteristico di cattura. Il tempo caratteristico di cattura è molto inferiore al tempo caratteristico di decadimento, quindi ci si aspetta di vedere nel grafico una coppia di esponenziali: uno legato al decadimento ed uno legato alla cattura. I tempi di attraversamento dell'apparato da parte dei leptoni sono considerati trascurabili.\\
+\subsubsection{Vita media}
+Prima di poter calcolare la vita  media, è opportuno ricordare i problemi che si possono incontrare in tale studio. 
+Come prima cosa, i dati che si sono raccolti sono dati provenienti da fondo (sempre presente),  muoni positivi e muoni negativi. 
+I muoni positivi si fermano all'interno dell'assorbitore, decadono con una costante caratteristica di decadimento, ed emettono un elettrone che (quando c'è stato un  trigger del sistema) attraversa gli scintillatori. 
+I muoni negativi, invece, quando si fermano all'interno dell'assorbitore, tendono ad essere catturati dal materiale stesso, emettendo un elettrone (che scalzano dall'atomo da cui sono stati catturati) con un tempo caratteristico di cattura. 
+Il tempo caratteristico di cattura è molto inferiore al tempo caratteristico di decadimento, quindi ci si aspetta di vedere nel grafico una coppia di esponenziali: uno legato al decadimento ed uno legato alla cattura. 
+I tempi di attraversamento dell'apparato da parte dei leptoni sono considerati trascurabili.\\
 
-Però è importante tenere conto delle inefficienze del sistema di acquisizione, che si possono trovare a diversi livelli. Ci si concentri in particolare sulle inefficienze che possono andare ad inficiare le misure di vita media. Una prima inefficienza è legata all'inefficienza della coppia discriminatore-Arietta: infatti dato che il discriminatore ha come uscita segnali logici dall'ampiezza di 200~ns, Arietta non è in grado di misurare tempi inferiori ai 215~ns, come è stato verificato e discusso nella fase di descrizione della scheda di acquisizione stessa. Questo si traduce come un'assenza di dati sperimentali al di sotto di tale tempo, che è stata confermata dall'acquisizione dati effettuata. Un altro problema è nella non linearità di Arietta: non si può utilizzare la calibrazione stimata per tempi inferiori ai 335~ns, quindi è necessario tagliare i dati al di sotto di tale tempo, una volta effettuata la calibrazione. Un'altra inefficienza sperimentale si può avere nella catena scintillatore-discriminatore: infatti all'interno di tali strumenti sono presenti parecchie componenti elettroniche che hanno un tempo caratteristico di funzionamento e potrebbero non funzionare se il segnale è più rapido di una certa soglia. Per poter tener conto di questa evenienza è necessario andare a guardare l'andamento vero e proprio dei dati raccolti, in  modo da poterli discutere e interpretare.\\
+Però è importante tenere conto delle inefficienze del sistema di acquisizione, che si possono trovare a diversi livelli. 
+Ci si concentri in particolare sulle inefficienze che possono andare ad inficiare le misure di vita media. 
+Una prima inefficienza è legata all'inefficienza della coppia discriminatore-Arietta: infatti dato che il discriminatore ha come uscita segnali logici dall'ampiezza di \SI{200}{\ns}, Arietta non è in grado di misurare tempi inferiori ai \SI{215}{\ns}, come è stato verificato e discusso nella fase di descrizione della scheda di acquisizione stessa. 
+Questo si traduce come un'assenza di dati sperimentali al di sotto di tale tempo, che è stata confermata dall'acquisizione dati effettuata. 
+Un altro problema è nella non linearità di Arietta: non si può utilizzare la calibrazione stimata per tempi inferiori ai \SI{335}{\ns}, quindi è necessario tagliare i dati al di sotto di tale tempo, una volta effettuata la calibrazione. 
+Un'altra inefficienza sperimentale si può avere nella catena scintillatore-discriminatore: infatti all'interno di tali strumenti sono presenti parecchie componenti elettroniche che hanno un tempo caratteristico di funzionamento e potrebbero non funzionare se il segnale è più rapido di una certa soglia. 
+Per poter tener conto di questa evenienza è necessario andare a guardare l'andamento vero e proprio dei dati raccolti, in  modo da poterli discutere e interpretare.\\
 \inputgraph{all_data_log}
 
-I dati raccolti, e tagliati secondo il limite imposto dalla non linearità di Arietta, si possono vedere nel Grafico~\ref{gr:all_data}, dove sono stati semplicemente presentati i dati una volta effettuata la calibrazione del sistema di acquisizione in scala logaritmica. Effettivamente da tale grafico si evince  come ci sia un problema legato all'efficienza dell'elettronica: a tempi bassi ci si aspetta di vedere per lo meno la coda dell'esponenziale di cattura dei muoni negativi, che ha un tempo caratteristico molto inferiore rispetto a quello di decadimento dei muoni positivi, ed invece si vede un andamento tale per cui i dati sperimentali al posto che aumentare diminuiscono, a rappresentare un basso numero di eventi a bassi tempi che non coincide con l'evento fisico che ci si aspetta di vedere. Si interpreta tale fenomeno come una conseguenza di inefficienze di tutta la catena di acquisizione precedente alla scheda Arietta.\\
+I dati raccolti, e tagliati secondo il limite imposto dalla non linearità di Arietta, si possono vedere nel Grafico~\ref{gr:all_data}, dove sono stati semplicemente presentati i dati una volta effettuata la calibrazione del sistema di acquisizione in scala logaritmica. 
+Effettivamente da tale grafico si evince  come ci sia un problema legato all'efficienza dell'elettronica: a tempi bassi ci si aspetta di vedere per lo meno la coda dell'esponenziale di cattura dei muoni negativi, che ha un tempo caratteristico molto inferiore rispetto a quello di decadimento dei muoni positivi, ed invece si vede un andamento tale per cui i dati sperimentali al posto che aumentare diminuiscono, a rappresentare un basso numero di eventi a bassi tempi che non coincide con l'evento fisico che ci si aspetta di vedere. 
+Si interpreta tale fenomeno come una conseguenza di inefficienze di tutta la catena di acquisizione precedente alla scheda Arietta.\\
 
-Per risolvere questo problema si è semplicemente tagliato il grafico a 1000~ns, oltre il quale non si vede più inefficienza, non avendo a disposizione metodi migliori per tenere conto di questo problema sistematico.\\
+Per risolvere questo problema si è semplicemente tagliato il grafico a \SI{1000}{\ns}, oltre il quale non si vede più inefficienza, non avendo a disposizione metodi migliori per tenere conto di questo problema sistematico.\\
 
-Come consegueza di questo taglio non è stato possibile andare ad interpolare la costante di cattura dei muoni negativi, in quanto completamente inghiottita dalle inefficienze del sistema di acquisizione. Qundi, si è deciso di interpolare i dati sperimentali con un semplice esponenziale sovrapposto ad un fondo costante. La funzione di interpolazione che si è utilizzata ha la forma:
+Come consegueza di questo taglio non è stato possibile andare ad interpolare la costante di cattura dei muoni negativi, in quanto completamente inghiottita dalle inefficienze del sistema di acquisizione. 
+Quindi, si è deciso di interpolare i dati sperimentali con un semplice esponenziale sovrapposto ad un fondo costante. La funzione di interpolazione che si è utilizzata ha la forma:
 \begin{equation}
   y = \frac{N_\text{bkg} \cdot bw}{t_\textit{max}-t_\textit{min}}+\frac{N_{\mu+}bw}{\tau \left(e^{-\frac{t_\textit{min}}{\tau}} - e^{-\frac{t_\textit{max}}{\tau}}\right)}
   e^{-\frac{t}{\tau}} 
   \label{eq:fit_mean_life}
 \end{equation}
-I parametri di fit di questa funzione sono i tre parametri $N_\text{bkg}$, $N_{\mu+}$ e $\tau$. Inoltre $bw$ indica la \textit{bin width}, cioè la larghezza dei bin utilizzati per creare l'istogramma, misurata naturalmente in ns, ed il termine davanti all'esponenziale vero e proprio tiene conto della normalizzazione. Questo termine è necessario perché $N_\mu$ dia effettivamente una stima dei muoni positivi che hanno attraversato il sistema di acquisizione nell'intervallo di tempo scelto. Questa funzione è stata fittata sui dati sperimentali tagliati come precedentemente descritto, ottenendo il Grafico \ref{gr:all_data}.\\
+I parametri di fit di questa funzione sono i tre parametri $N_\text{bkg}$, $N_{\mu+}$ e $\tau$. 
+Inoltre $bw$ indica la \textit{bin width}, cioè la larghezza dei bin utilizzati per creare l'istogramma, misurata naturalmente in ns, ed il termine davanti all'esponenziale vero e proprio tiene conto della normalizzazione. 
+Questo termine è necessario perché $N_\mu$ dia effettivamente una stima dei muoni positivi che hanno attraversato il sistema di acquisizione nell'intervallo di tempo scelto. Questa funzione è stata fittata sui dati sperimentali tagliati come precedentemente descritto, ottenendo il Grafico \ref{gr:all_data}.\\
 \inputgraph{all_data}
 
 Da quanto si vede dal grafico, il valore sul tempo di decadimento dei muoni è molto compatibile con il valore noto in  letteratura, infatti si ha un tempo di decadimento di:
 \begin{equation}
-  \tau = (2.21 \pm 0.03) \, \mu\text{s}
+  \tau = \SI{2.21+-0.03}{\micro\second}
 \end{equation}
-da confrontare con il valore in letteratura~\cite{bib:Patrignani:2016xqp} di $(2.1969811 \pm 0.0000022) \mu$s.\\
+da confrontare con il valore in letteratura~\cite{bib:Patrignani:2016xqp} di \SI{2.1969811+-0.0000022}{\micro\second}.\\
 
-A questo dato, a cui viene associato l'errore statistico, andrebbe associata anche una stima delle incertezze sperimentali. In particolare, si è analizzata l'incertezza sperimentale legata alla calibrazione che potrebbe non essere corretta (infatti naturalmente i parametri di calibrazione utilizzati sono associate ad un'incertezza). Per  stimare l'errore sistematico legato a tale fenomeno si è deciso di fare un'ulteriore interpolazione, siimile a quella appena fatta, ma senza aver calibrato il  grafico. A questo punto i parametri di calibrazione sono stati utilizzati per trasformare la $\tau$ in \textit{clock cycles} così trovata in nanosecondi. L'operazione a posteriori ha permesso di propagare gli errori sull'operazione di cambio di unità di misura, e quindi avere una stima dell'incertezza legata a tale trasformazione. Tenendo conto degli errori sui parametri di calibrazione interpolati e della loro correlazione, tale grandezza risulta di 2~ns, ampiamente trascurabile rispetto all'incertezza statistica dell'ordine della decina di nanosecondi.
+A questo dato, a cui viene associato l'errore statistico, andrebbe associata anche una stima delle incertezze sperimentali. 
+In particolare, si è analizzata l'incertezza sperimentale legata alla calibrazione che potrebbe non essere corretta (infatti naturalmente i parametri di calibrazione utilizzati sono associate ad un'incertezza). 
+Per  stimare l'errore sistematico legato a tale fenomeno si è deciso di fare un'ulteriore interpolazione, simile a quella appena fatta, ma senza aver calibrato il  grafico. 
+A questo punto i parametri di calibrazione sono stati utilizzati per trasformare la $\tau$ in \textit{clock cycles} così trovata in nanosecondi. 
+L'operazione a posteriori ha permesso di propagare gli errori sull'operazione di cambio di unità di misura, e quindi avere una stima dell'incertezza legata a tale trasformazione.
+Tenendo conto degli errori sui parametri di calibrazione interpolati e della loro correlazione, tale grandezza risulta di \SI{2}{\ns}, ampiamente trascurabile rispetto all'incertezza statistica dell'ordine della decina di nanosecondi.
 
-Dal grafico inoltre si evince come il fondo sia molto piccolo (dell'ordine dell'1\%) rispetto ai dati sperimentali, e quindi non si effettuano ulteriori analisi per la sua riduzione. Non si rivelano inoltre, in tale grafico, fenomeni che potrebbero evidenziare errori sperimentali o inefficienze evidenti del sistema, come nel grafico precedente il taglio a 1~$\mu$s.
+Dal grafico inoltre si evince come il fondo sia molto piccolo (dell'ordine dell'\SI{1}{\percent}) rispetto ai dati sperimentali, e quindi non si effettuano ulteriori analisi per la sua riduzione. 
+Non si rivelano inoltre, in tale grafico, fenomeni che potrebbero evidenziare errori sperimentali o inefficienze evidenti del sistema, come nel grafico precedente il taglio a \SI{1}{\us}.
 
-\subsection{Rate di muoni}
+\subsubsection{Rate di muoni}
 I dati raccolti sono stati utilizzati anche per fare una stima del rate di dati che è stato acquisito, in modo che sia confrontabile con la simulazione effettuata e discussa più avanti, così da avere evidenza di eventuali inefficienze di cui non si è tenuto conto. Per fare una stima del rate non si sono potuti utilizzare tutti i dati analizzati precedentemente, in quanto a causa degli spegnimenti non previsti del sistema di acquisizione non si conosce il tempo in cui sono stati raccolti tali dati.\\
 
-Quindi, si è ripetuta l'analisi precedentemente fatta solamente con i dati raccolti in giornate intere, cioè quelli raccolti in 13 giorni, ossia in 1123200~s. Si sono utilizzati questi dati perch\'e abbiamo assunto che se un giorno era preceduto e seguito da un altro di presa dati, l'acquisizione era continuata per l'intera giornata. In realtà, i dati venivano salvati ogni 5 minuti, perciò non si è in linea di principio sicuri sul tempo di acquisizione, ed andrebbe associato un errore. Però, considerando che le 24~ore di un giorno sono esattamente divisibili per i 5 minuti, nel caso la prima acquisizione del giorno non sia iniziata a mezzanotte ma qualche minuto prima, anche l'ultima del giorno sarebbe finita qualche minuto prima, perciò si è sicuri che l'incertezza sul tempo sia trascurabile rispetto alle altre incertezze in gioco.\\
+Quindi, si è ripetuta l'analisi precedentemente fatta solamente con i dati raccolti in giornate intere, cioè quelli raccolti in 13 giorni, ossia in \SI{1123200}{\s}. Si sono utilizzati questi dati perch\'e abbiamo assunto che se un giorno era preceduto e seguito da un altro di presa dati, l'acquisizione era continuata per l'intera giornata. 
+In realtà, i dati venivano salvati ogni 5 minuti, perciò non si è in linea di principio sicuri sul tempo di acquisizione, ed andrebbe associato un errore. 
+Però, considerando che le \SI{24}{\hour} di un giorno sono esattamente divisibili per i 5 minuti, nel caso la prima acquisizione del giorno non sia iniziata a mezzanotte ma qualche minuto prima, anche l'ultima del giorno sarebbe finita qualche minuto prima, perciò si è sicuri che l'incertezza sul tempo sia trascurabile rispetto alle altre incertezze in gioco.\\
 \inputgraph{for_rate}
 
-I dati solamente dei 13 giorni utilizzati si possono vedere nel grafico \ref{gr:for_rate}, dove l'interpolazione è stata fatta con la stessa funzione descritta precedentemente. Si è in particolare interessati al parametri $N_{\mu+}$, che rappresenta il numero di eventi registrati nell'intervallo di tempo analizzato. Data la legge di decadimento esponenziale, si può trovare il numero di eventi totali una volta noti gli eventi tra un tempo $t_\textit{min}$ e un tempo $t_\textit{max}$  tramite la formula:
+I dati solamente dei 13 giorni utilizzati si possono vedere nel grafico \ref{gr:for_rate}, dove l'interpolazione è stata fatta con la stessa funzione descritta precedentemente. Si è in particolare interessati al parametri $N_{\mu+}$, che rappresenta il numero di eventi registrati nell'intervallo di tempo analizzato. 
+Data la legge di decadimento esponenziale, si può trovare il numero di eventi totali una volta noti gli eventi tra un tempo $t_\textit{min}$ e un tempo $t_\textit{max}$  tramite la formula:
 \begin{equation}
   \bar{N}_{\mu+} = \frac{N_{\mu+}}{e^{\frac{t_\textit{min}}{\tau}}-e^{\frac{-t_\textit{max}}{\tau}}}
   \label{eq:tot_mup}
 \end{equation}
 L'utilizzo di questa formula permette di avere una stima del numero di muoni che si preveda si sarebbero visti se il sistema di acquisizione fosse perfetto e permettesse di vedere decadimenti a qualsiasi tempo. Con questa formula, si arriva ad una stima di:
 \begin{equation}
-  \bar{N}_{\mu+} = (1.63 \pm 0.01) \cdot 10^4
+  \bar{N}_{\mu+} = \num{1.63+-0.01e4}
 \end{equation}
-muoni positivi. Questo valore si vuole utilizzare per ottenere il rate di muoni incidenti sull'apparato, che si può calcolare considerando che quanto appena trovato è il numero di muoni positivi, ed il rapporto tra i muoni positivi e i muoni negativi (che non si possono vedere con l'apparato utilizzato per i problemi discussi sopra) è tra 1.25 e 1.30 a 1\footnote{Il dato, preso da~\cite{bib:Patrignani:2016xqp}, è proprio tra  1.25 e 1.30, quindi si è deciso di considerare come rapporto $1.275\pm0.025$}. Quindi, si ha che il numero totale di muoni che si sarebbero visti se si fosse stati in grado di vedere anche i muoni negativi, sarebbe stato:
+muoni positivi. 
+Questo valore si vuole utilizzare per ottenere il rate di muoni incidenti sull'apparato, che si può calcolare considerando che quanto appena trovato è il numero di muoni positivi, ed il rapporto tra i muoni positivi e i muoni negativi (che non si possono vedere con l'apparato utilizzato per i problemi discussi sopra) è tra 1.25 e 1.30 a 1\footnote{Il dato, preso da~\cite{bib:Patrignani:2016xqp}, è proprio tra  1.25 e 1.30, quindi si è deciso di considerare come rapporto $1.275\pm0.025$}. 
+Quindi, si ha che il numero totale di muoni che si sarebbero visti se si fosse stati in grado di vedere anche i muoni negativi, sarebbe stato:
 \begin{equation}
-  \bar{N}_{\mu} = (2.40 \pm 0.04) \cdot 10^4
+  \bar{N}_{\mu} = \num{2.40 \pm 0.04e4}
 \end{equation}
 Conoscendo poi il tempo nel quale si sono raccolti questi dati è possibile andare a stimare il rate di eventi che abbiano caratteristiche (dal punto di vista dell'energia del muone, di quella dell'elettrone e delle loro direzioni) che il sistema di acquisizione sarebbe in grado di registrare se non avesse problemi dal punto di vista temporale:
 \begin{equation}
-  \nu_\mu = (0.0214 \pm 0.0004) \, \text{Hz}
+  \nu_\mu = \SI{0.0214 \pm 0.0004}{\Hz}
 \end{equation}

@@ -1,1 +1,1 @@
-Guadagno dei due diodi della prima scheda, in funzione della tensione di bias applicata.
+Guadagno dei due diodi della scheda dello scintillatore D, in funzione della tensione di bias applicata.

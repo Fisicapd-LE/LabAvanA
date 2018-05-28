@@ -1,1 +1,1 @@
-Tensione di breakdown e rapporto guadagno/sovrattensione, per ogni diodo analizzato.
+Tensione di breakdown e rapporto guadagno/sovratensione, per ogni diodo analizzato.

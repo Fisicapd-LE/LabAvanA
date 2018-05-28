@@ -2,10 +2,10 @@
 L'apparato strumentale consiste in diverse componenti che, assieme, permettono di effettuare la misura che ci si è prefissati. 
 \subsection{Rivelatori}
 I rivelatori utilizzati sono 6 scintillatori plastici modello EJ-200 (della \textit{Eljen Technology}), dalle misure che vengono garantite di fabbrica come
-600x250x10 mm con una precisione fornita come $\pm 0.5$ mm. Su tali scintillatori sono stati scavati dei canali sui quali è stata  posta una fibra ottica il grado di raccogliere
+\SI{600x250x10}{\milli\m} con una precisione fornita come \SI{\pm 0.5}{\milli\m}. Su tali scintillatori sono stati scavati dei canali sui quali è stata  posta una fibra ottica il grado di raccogliere
 i fotoni di scintillazione generati dal passaggio di una carica aumentandone la lunghezza d'onda. Per attaccare la fibra ottica è stato utilizzato del cemento ottico EJ-500; la fibra ottica è stata
 incollata in modo che la distanza che un fotone percorre prima di entrare nella fibra ottica fosse minima considerando che tale fotone può essere generato in un punto qualsiasi
-dello scintillatore. Poi gli estremi della fibra ottica, uscenti dallo scintillatore, sono stati levigati usando della carta vetro di diverso granularit\`a.\\
+dello scintillatore. Poi gli estremi della fibra ottica, uscenti dallo scintillatore, sono stati levigati usando della carta vetro di diversa granularit\`a.\\
 
 Successivamente si è passati al \textit{wrapping} degli scintillatori: affinché siano utilizzabili gli scintillatori devono essere avvolti in un materiale riflettente
 (così ch\'e non si perdano fotoni che escono dagli scintillatori) e poi di un materiale assorbente (così ch\'e non entrino fotoni dentro lo scintillatore). Per fare
@@ -37,7 +37,7 @@ allo stesso modo) si può vedere lo scintillatore una volta finito il wrapping.
 % \inputimg{end_wrapping}
 
 \end{itemize}
-Il wrapping è stato comunque eseguito nel modo più omogeneo possibile, in quanto ogni aumento di spessore nel wrapping romperebbe la simmetria del sistema di acquisizione quando un rivelatore viene poggiato sopra un altro.
+Il wrapping è stato comunque eseguito nel modo più omogeneo possibile, in quanto ogni aumento di spessore nel wrapping romperebbe la simmetria del sistema di acquisizione quando un rivelatore viene poggiato sopra un altro.\\
 
 Sono stati ricoperti e caratterizzati 6 scintillatori diversi, 3 quest'anno (D, che abbiamo solo caratterizzato, E, F) e 3 nell'anno precedente (A, B, C), ma per la presa dati vera e propria se ne sono utilizzati solo 3 (2 di trigger e uno di veto). Questo \`e perch\'e si \`e visto nella prima presa dati completa per la misura della vita media dei muoni che il rate di eventi era molto minore di quello atteso. Si \`e ipotizzato che questo fosse causato dal fatto che gli elettroni si potessero fermare anche all'interno del rivelatore, oltre che nell'assorbitore e quindi non attraversare i  rivelatori richiesti. L'ipotesi \`e stata immediatamente confermata dall'aumento del rate una volta rimossi i tre scintillatori superiori dal trigger, e successivamente dall'accordo del rate sperimentale con quello simulato.
 
@@ -51,24 +51,24 @@ L'elettronica di acquisizione utilizzata consisteva in:
 
 \inputimg{schema_pcb}
 
-\item Generatore di tensione impostato per erogare una tensione di 5~V, usato per l'alimentazione degli operazionali nel circuito, funzionanti a $\pm$~5~V
+\item Generatore di tensione impostato per erogare una tensione di \SI{5}{\volt}, usato per l'alimentazione degli operazionali nel circuito, funzionanti a \SI{+-5}{\volt}
 
-\item Generatore di tensione impostato ad una tensione pi\`u alta, $\sim$ 35~V, usato per dare le tensioni di bias ai SiPM. La tensione precisa viene impostata a valle per ogni SiPM separatamente tramite un sistema di partitori di tensione.
+\item Generatore di tensione impostato ad una tensione pi\`u alta, \SI{\sim 35}{\volt}, usato per dare le tensioni di bias ai SiPM. La tensione precisa viene impostata a valle per ogni SiPM separatamente tramite un sistema di partitori di tensione.
 
-\item Oscilloscopio digitale Picoscope modello 5000A con una frequenza di acquisizione di 1~GHz \cite{bib:datasheet_pico}.
+\item Oscilloscopio digitale Picoscope modello 5000A con una frequenza di acquisizione di \SI{1}{\GHz} \cite{bib:datasheet_pico}.
 
 \item Generatore di coincidenze programmabile a 16 canali di ingresso \cite{bib:articolo_garfa}.
 
-\item Scheda di acquisizione di differenze temporali, soprannominata Arietta, non ancora utilizzata in questa prima parte dell'esperimento.
+\item Scheda di acquisizione di differenze temporali, soprannominata Arietta, descritta in seguito in una  sezione dedicata.
 
 \end{itemize}
 
 \subsection{Assorbitore}
-L'assorbitore non è ancora stato inserito per effettuare misure, ma sarà costituito da una lastra di rame dalle dimensioni 600x250x25~mm.
+Assorbitore in rame dalle dimensioni certificate al mm di \SI{600x25x25}{\milli\metre}.
 
 \subsection{Solenoide}
-Per generare il campo magnetico si avvolgeranno con doppio avvolgimento 20~kg di filo di rame smaltato attorno ad un supporto in acciaio dalle dimensioni circa
-di 1000x550x117~mm.
+Per generare il campo magnetico si avvolgeranno con doppio avvolgimento \SI{20}{\kg} di filo di rame smaltato attorno ad un supporto in acciaio dalle dimensioni circa
+di \SI{1000x550x117}{\milli\metre}.
 Purtroppo a causa  di eventi imprevisti (difficolt\`a burocratiche nell'ordinazione del filo di rame e la concomitante rottura dell'HDD nel computer di lavoro, con conseguente pausa forzata e necessitt\`a di recuperare i dati), pur essendo pronto e calibrato l'apparato non \`e stato possibile procedere con la misura in campo magnetico.
 
 %TODO add why 3 scint

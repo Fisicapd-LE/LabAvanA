@@ -1,0 +1,36 @@
+\BOOKMARK [1][-]{section.1}{Premesse}{}% 1
+\BOOKMARK [1][-]{section.2}{Descrizione dell'esperienza}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Il fattore g e la sua importanza fisica}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{I muoni cosmici e l'effetto di polarizzazione netta}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{La misura temporale e della frequenza di precessione}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{Descrizione dell'apparato strumentale}{}% 6
+\BOOKMARK [2][-]{subsection.3.1}{Rivelatori}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.2}{Elettronica di acquisizione}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.3}{Assorbitore}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.4}{Solenoide}{section.3}% 10
+\BOOKMARK [1][-]{section.4}{Analisi dati}{}% 11
+\BOOKMARK [2][-]{subsection.4.1}{Caratterizzazione dei diodi}{section.4}% 12
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Studio della caratteristica tensione corrente}{subsection.4.1}% 13
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Studio dell'amplificazione dei diodi}{subsection.4.1}% 14
+\BOOKMARK [2][-]{subsection.4.2}{Stima dell'efficienza dell'apparato}{section.4}% 15
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Efficienza sperimentale}{subsection.4.2}% 16
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Correzione dell'efficienza considerando le coincidenze casuali}{subsection.4.2}% 17
+\BOOKMARK [2][-]{subsection.4.3}{Studio di Arietta}{section.4}% 18
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Calibrazione}{subsection.4.3}% 19
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Efficienza}{subsection.4.3}% 20
+\BOOKMARK [2][-]{subsection.4.4}{Studio dei muoni}{section.4}% 21
+\BOOKMARK [3][-]{subsubsection.4.4.1}{Vita media}{subsection.4.4}% 22
+\BOOKMARK [3][-]{subsubsection.4.4.2}{Rate di muoni}{subsection.4.4}% 23
+\BOOKMARK [1][-]{section.5}{Simulazioni}{}% 24
+\BOOKMARK [2][-]{subsection.5.1}{Generazione dei raggi cosmici}{section.5}% 25
+\BOOKMARK [2][-]{subsection.5.2}{Interazione con i rivelatori}{section.5}% 26
+\BOOKMARK [2][-]{subsection.5.3}{Interazione con l'assorbitore}{section.5}% 27
+\BOOKMARK [2][-]{subsection.5.4}{Implementazione del campo magnetico}{section.5}% 28
+\BOOKMARK [2][-]{subsection.5.5}{Decadimento del muone cosmico}{section.5}% 29
+\BOOKMARK [2][-]{subsection.5.6}{Output della simulazione}{section.5}% 30
+\BOOKMARK [3][-]{subsubsection.5.6.1}{Spettro temporale in campo magnetico}{subsection.5.6}% 31
+\BOOKMARK [3][-]{subsubsection.5.6.2}{Informazioni varie}{subsection.5.6}% 32
+\BOOKMARK [3][-]{subsubsection.5.6.3}{Stima della correzione geometrica alla stima dell'efficienza}{subsection.5.6}% 33
+\BOOKMARK [3][-]{subsubsection.5.6.4}{Stima del rate}{subsection.5.6}% 34
+\BOOKMARK [1][-]{appendix.Alph1}{Studio del guadagno}{}% 35
+\BOOKMARK [1][-]{appendix.Alph2}{Studio calibrazione Arietta}{}% 36
