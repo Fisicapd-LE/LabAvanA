@@ -24,7 +24,7 @@ Questa simulazione non \`e per\`o stata utile in quanto nell'esperimento vero e 
 \subsection{Decadimento del muone cosmico}
 Se il muone cosmico viene fermato all'interno dell'assorbitore, esso decadrà dopo un tempo che dipende dal tipo di muone che si ferma (muone o antimuone), che è distribuito
 come un esponenziale dal tempo caratteristico che viene assunto come noto dalla letteratura. Perciò si considera il muone, fermo, trascorra un tempo che in media è il tempo
-di vita di tale muone, e poi decada emettendo sostanzialmente un elettrone (non sono rilevabili gli altri prodotti del decadimento). La direzione dell'elettrone \`e simulabile a partire dalle caratteristiche del muone. Infatti, come detto in precedenza, la direzione dell'elettrone \`e correlata alla direzione dello spin del muone al momento del decadimento. Per ogni interazione perci\`o \`e stata considerata l'elicit\`a del muone, forward, backward. In entrambi i casi si \`e fatto ruotare lo spin attorno al campo magnetico nel punto di decadimento, per un tempo pari al tempo di decadimento simulato. La direzione dell'elettrone viene poi generata a partire dalla direzione dello spin, usando la formula 
+di vita di tale muone, e poi decada emettendo sostanzialmente un elettrone (non sono rilevabili gli altri prodotti del decadimento). La direzione dell'elettrone \`e simulabile a partire dalle caratteristiche del muone. Infatti, come detto in precedenza, la direzione dell'elettrone \`e correlata alla direzione dello spin del muone al momento del decadimento. Per ogni interazione perci\`o \`e stata considerata l'elicit\`a del muone: forward o backward. In entrambi i casi si \`e fatto ruotare lo spin attorno al campo magnetico nel punto di decadimento, per un tempo pari al tempo di decadimento simulato. La direzione dell'elettrone viene poi generata a partire dalla direzione dello spin, usando la formula 
 \begin{equation}
 	P(\theta, x) \propto \left(3 - 2 x + \cos{\theta}\left(1 - 2 x\right)\right)
 \end{equation}
@@ -36,7 +36,7 @@ Gli output utili della simulazione descritta ai punti precedenti sono numerosi e
 \item Efficienza: considerando solamente l'interazione tra i raggi cosmici e gli scintillatori è possibile stimare quanti muoni non risultano in coincidenza a causa
 di condizioni geometriche non favorevoli, per esempio quelli che lasciano segnale attraversando ai bordi i due rivelatori superiori ma non entrano nemmeno nel terzo
 rivelatore.
-\item Informazioni varie: Dalla simulazione, facendo istogrammi di quantit\`a intermedie, \`e possibile ricavare informazioni sul comportamento delle particelle. Un esempio di ci\`o \`e la distribuzione della morte degli elettroni.
+\item Informazioni varie: dalla simulazione, facendo istogrammi di quantit\`a intermedie, \`e possibile ricavare informazioni sul comportamento delle particelle. Un esempio di ci\`o \`e la distribuzione della morte degli elettroni.
 \item Spettro temporale: data tutta la simulazione fatta, è possibile fare un plot del tempo che intercorre tra il passaggio del muone e quello dell'elettrone, riottenendo
 l'esponenziale del tempo di decadimento, corretto con la rotazione dello spin, ovvero il grafico da cui si potrebbe calcolare il fattore di Land\'e. Questo ci permette di calcolare l'effetto di un campo magnetico non uniforme sulla forma del segnale.
 \item Confronto della rate con quella sperimentale: \`e possibile confrontare la rate calcolata dalla simulazione con quella ottenuta durante la misura della vita media dei muoni. Questo ci permette di verficare che non ci siano inefficienze evidenti che non abbiamo considerato che potrebbero distorgere il risultato.
@@ -69,7 +69,7 @@ Chiedendo durante la simulazione di stampare la posizione della morte degli elet
 In una sezione precedente abbiamo calcolato la rate di eventi validi a partire dalle nostre misure della vita media dei muoni. 
 \`E possibile fare una stima basandosi sui risultati della simulazione: data infatti la frazione di eventi simulati che vengono rilevati come validi, uniti ai dati sperimentali sui muoni cosmici presi dal PDG (\cite{bib:Patrignani:2016xqp}), si pu\`o associare un valore per la rate di eventi.
 
-L'output della simulazione usata \`e mostrato in Figura \ref{gr:sim_30G}
+L'output della simulazione usata \`e mostrato in Figura \ref{gr:sim_30G}, dove sono stati simulati $3\cdot 10^{10}$~muoni.
 \inputgraph{sim_30G}
 
 La frequenza media di muoni integrata su tutti gli angoli \`e $130 \frac{\mathrm{muoni}}{m^2 s}$. La superficie che noi consideriamo \`e di 1.40~m x 0.70~m. 
