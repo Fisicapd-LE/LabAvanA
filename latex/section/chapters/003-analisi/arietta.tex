@@ -18,7 +18,7 @@ In pratica sono stati raccolti due campioni differenti: un campione esteso per t
 Le grandezze calcolate si possono leggere nella Tabella~\ref{tab:linearity} dove sono state fatte le interpolazioni per i tre campioni e se ne presentano coefficienti per l'interpolazione lineare ($m$ e $q$) e quelli per l'interpolazione quadratica ($m'$, $q'$, $\varepsilon$).\\
 \inputtab{linearity}
 
-Nella tabella~\ref{tab:Ftest} si riportano invece gli esiti dell'F-test, in particolare il numero di gradi di libertà di numeratore e denominatore ($N_N$ e $N_D$), l'esito dell'F-test ($F$) ed il paramero della distribuzione di Fischer tale per cui la probabilità sia uguale al 95\% ($\bar{F}$). Questo  significa che se il valore di $F$ è superiore al valore di $\bar{F}$ allora si potrà rigettare con una confidence level del 95\% l'ipotesi che i due modelli siano equivalenti, e  sarà quindi necessaria l'introduzione del termine di secondo grado per descrivere il campione.\\
+Nella Tabella~\ref{tab:Ftest} si riportano invece gli esiti dell'F-test, in particolare il numero di gradi di libertà di numeratore e denominatore ($N_N$ e $N_D$), l'esito dell'F-test ($F$) ed il paramero della distribuzione di Fischer tale per cui la probabilità sia uguale al 95\% ($\bar{F}$). Questo  significa che se il valore di $F$ è superiore al valore di $\bar{F}$ allora si potrà rigettare con una confidence level del 95\% l'ipotesi che i due modelli siano equivalenti, e  sarà quindi necessaria l'introduzione del termine di secondo grado per descrivere il campione.\\
 \inputtab{Ftest}
 
 Da queste tabelle si evince come, effettivamente, ci sia un problema di non linearità a bassi tempi. Infatti, dalla stima dei coefficienti di secondo ordine, si vede come il $\mathcal{C}_1$, che si ferma a $1.79 \mu\text{s}$ abbia un coefficiente molto compatibile con lo zero mentre gli altri due campioni, che arrivano fino a 215~ns hanno un coefficiente scarsamente compatibile con zero.\\
@@ -36,7 +36,7 @@ Dato questo problema che si è trovato con la linearità di Arietta, in tutte le
 
 Le misure finali della calibrazione indicano che i coefficienti di calibrazione sono:
 \begin{equation}
-  m = (14.994 \pm 0.007) \text{ns/cycles} \hspace{2cm} q = (6 \pm 2) \text{ns}
+  m = (14.994 \pm 0.007)~\text{ns/cycles} \hspace{2cm} q = (6 \pm 2)~\text{ns}
 \end{equation}
 
 
