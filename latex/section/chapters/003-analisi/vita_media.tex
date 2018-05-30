@@ -62,7 +62,7 @@ In realtà, i dati venivano salvati ogni 5 minuti, perciò non si è in linea di
 Però, considerando che le \SI{24}{\hour} di un giorno sono esattamente divisibili per i 5 minuti, nel caso la prima acquisizione del giorno non sia iniziata a mezzanotte ma qualche minuto prima, anche l'ultima del giorno sarebbe finita qualche minuto prima, perciò si è sicuri che l'incertezza sul tempo sia trascurabile rispetto alle altre incertezze in gioco.\\
 \inputgraph{for_rate}
 
-I dati solamente dei 13 giorni utilizzati si possono vedere nel grafico \ref{gr:for_rate}, dove l'interpolazione è stata fatta con la stessa funzione descritta precedentemente. Si è in particolare interessati al parametri $N_{\mu+}$, che rappresenta il numero di eventi registrati nell'intervallo di tempo analizzato. 
+I dati solamente dei 13 giorni utilizzati si possono vedere nel grafico di Figura \ref{gr:for_rate}, dove l'interpolazione è stata fatta con la stessa funzione descritta precedentemente. Si è in particolare interessati al parametri $N_{\mu+}$, che rappresenta il numero di eventi registrati nell'intervallo di tempo analizzato. 
 Data la legge di decadimento esponenziale, si può trovare il numero di eventi totali una volta noti gli eventi tra un tempo $t_\textit{min}$ e un tempo $t_\textit{max}$  tramite la formula:
 \begin{equation}
   \bar{N}_{\mu+} = \frac{N_{\mu+}}{e^{\frac{t_\textit{min}}{\tau}}-e^{\frac{-t_\textit{max}}{\tau}}}

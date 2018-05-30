@@ -14,7 +14,7 @@ Il campo magnetico dell'esperimento è generato da un solenoide finito a sezione
 Si è voluto andare ad utilizzare un campo che non fosse uniforme all'interno del solenoide, e per farlo si è risolto numericamente tale problema. 
 Si è introdotta la corrente come pareti di corrente uniforme e costante, si è discretizzato lo spazio e si è utilizzato l'algoritmo di Jacobi per ottenere il potenziale vettore data la densità di corrente introdotta. 
 Poi si è calcolato numericamente il rotore per andare a trovare effettivamente il campo magnetico. 
-L'algoritmo è stato fatto girare su uno spazio più grande (circa un fattore 5 in y e z, mentre circa 2 in x) del solenoide, in modo che siano fisicamente sensate le condizioni al contorno assorbenti ai bordi del sistema e su solo un ottante dello spazio, impostando condizioni al contorno riflettenti o antiriflettenti (per conservare la simmetria del sistema) nei piani che separano i settori. Da questo calcolo si è trovato come effettivamente il campo magnetico non sia costante all'interno del solenoide ma abbia una dipendenza dalla posizione, come si può vedere nelle Immagini \ref{gr:campo_b@xy} e \ref{gr:campo_b@zy} dove si possono vedere le proiezioni sul piano y = 0 delle componenti x e z del campo magnetico. 
+L'algoritmo è stato fatto girare su uno spazio più grande (circa un fattore 5 in y e z, mentre circa 2 in x) del solenoide, in modo che siano fisicamente sensate le condizioni al contorno assorbenti ai bordi del sistema e su solo un ottante dello spazio, impostando condizioni al contorno riflettenti o antiriflettenti (per conservare la simmetria del sistema) nei piani che separano i settori. Da questo calcolo si è trovato come effettivamente il campo magnetico non sia costante all'interno del solenoide ma abbia una dipendenza dalla posizione, come si può vedere nei grafici di Figure \ref{gr:campo_b@xy} e \ref{gr:campo_b@zy} dove si possono vedere le proiezioni sul piano y = 0 delle componenti x e z del campo magnetico. 
 Questo processo di risoluzione numerica dell'equazione differenziale ha permesso di avere dei valori per il campo magnetico più realistici che dipendano dalla posizione presa in considerazione: in particolare si \`e stimato il modulo quadro del campo magnetico in corrispondenza del centro del solenoide e del centro della faccia dello scintillatore perpendicolare all'asse del soleoide stesso (il punto di massima differenza, come si pu\`o notare dai grafici), notando una variazione di circa il \SI{3.2}{\percent}. 
 
 Questa simulazione non \`e per\`o stata utile in quanto nell'esperimento vero e proprio il campo magnetico non \`e stato disponibile.
@@ -40,11 +40,12 @@ rivelatore.
 \item Spettro temporale: data tutta la simulazione fatta, è possibile fare un plot del tempo che intercorre tra il passaggio del muone e quello dell'elettrone, riottenendo
 l'esponenziale del tempo di decadimento, corretto con la rotazione dello spin, ovvero il grafico da cui si potrebbe calcolare il fattore di Land\'e. Questo ci permette di calcolare l'effetto di un campo magnetico non uniforme sulla forma del segnale.
 \item Confronto della rate con quella sperimentale: \`e possibile confrontare la rate calcolata dalla simulazione con quella ottenuta durante la misura della vita media dei muoni. Questo ci permette di verficare che non ci siano inefficienze evidenti che non abbiamo considerato che potrebbero distorgere il risultato.
+\item Stima delle coincidenze casuali attese durante l'esperimento: data la struttura dell'esperimento \`e possibile che due muoni arrivino abbastanza vicini e triggerino l'apparato in rapida successione. Questo porterebbe a un segnale falso, in quanto non abbiamo modo di distinguere il segnale di un elettrone da quello di un $\mu$.
 \end{itemize}
 
 \inputgraph{ball_1e9}
 \subsubsection{Spettro temporale in campo magnetico}
-L'Immagine \ref{gr:ball_1e9} mostra il risultato di una simulazione con \SI{1e9} eventi nel caso in cui B sia considerato uniformemente uguale a \SI{55}{\gauss} e nel caso in cui il campo magnetico viene simulato. 
+Il grafico in Figura \ref{gr:ball_1e9} mostra il risultato di una simulazione con \SI{1e9} eventi nel caso in cui B sia considerato uniformemente uguale a \SI{55}{\gauss} e nel caso in cui il campo magnetico viene simulato. 
 Si pu\`o vedere dal grafico come il campo magnetico influisca poco sui $\mu^-$, mentre produce l'effetto desiderato sui $\mu^+$. 
 Da un fit sull'istogramma con la funzione
 
@@ -58,7 +59,8 @@ si ottiene un valore per $\alpha$ di \SI{9.1 \pm 0.3}{\percent}, mentre si ottie
 Dal grafico si pu\`o anche notare come le due distribuzioni siano pressoch\'e identiche fino ad alti t, ed anche l\`a la discrepanza pu\`o essere assimilata ad errori statistici. Non \`e chiaro se questa uguaglianza \`e reale o dovuta a una statistica insufficiente.
 
 \subsubsection{Informazioni varie}
-Chiedendo durante la simulazione di stampare la posizione della morte degli elettroni \`e possibile costruire l'istogramma di Figura \ref{gr:edeath}. Si pu\`o notare come la maggior parte degli elettroni muoia dentro l'assorbitore, ma che una buona percentuale ($\sim$\SI{11}{\percent}) muore anche negli scintillatori
+Chiedendo durante la simulazione di stampare la posizione della morte degli elettroni \`e possibile costruire l'istogramma di grafico in Figura \ref{gr:edeath}. Si pu\`o notare come la maggior parte degli elettroni muoia dentro l'assorbitore, ma che una buona percentuale ($\sim$\SI{11}{\percent}) muore anche negli scintillatori.
+Appare evidente che una consistente percentuale di elettroni muoia dentro gli scintillatori e che quindi l'aggiunta di ulteriori rivelatori in coincidenza, oltre al voluto effetto di ridurre il rumore, tende ad abbassare drammaticamente la rate di coincidenze valide (anche di ordini di grandezza, come evidenziato in una prima presa dati in cui questo effetto era stato trascurato). Questo ha portato ad una rimozione di rivelatori dall'esperimento, ottendendo infine la configurazione definitiva con soli due rivelatori di coincidenza e uno di veto.
 
 \inputgraph{edeath}
 
@@ -69,16 +71,28 @@ Chiedendo durante la simulazione di stampare la posizione della morte degli elet
 In una sezione precedente abbiamo calcolato la rate di eventi validi a partire dalle nostre misure della vita media dei muoni. 
 \`E possibile fare una stima basandosi sui risultati della simulazione: data infatti la frazione di eventi simulati che vengono rilevati come validi, uniti ai dati sperimentali sui muoni cosmici presi dal PDG (\cite{bib:Patrignani:2016xqp}), si pu\`o associare un valore per la rate di eventi.
 
-L'output della simulazione usata \`e mostrato in Figura \ref{gr:sim_30G}, dove sono stati simulati \SI{3e10}{muoni}.
+L'output della simulazione usata \`e mostrato nel grafico in Figura \ref{gr:sim_30G}, dove sono stati simulati \SI{3e10}{muoni}.
 \inputgraph{sim_30G}
 
 La frequenza media di muoni integrata su tutti gli angoli \`e \SI{130}{muoni\per\square\metre\second}. La superficie che noi consideriamo \`e di \SI{1.40 x 0.70}{\m}. 
 La frazione di muoni che passa la schermatura in cemento dell'edificio viene presa dalla simulazione come \SI{0.92}{\percent}.
 
 Data un frazione di eventi validi di \num{5.47e-4}, si arriva a una rate stimata di \SI{0.0162}{\Hz}. 
-Questo numero va confrontato con la rate sperimentale di \SI{0.021}{\Hz}.
+Questo numero va confrontato con la rate sperimentale di \SI{0.0214 +- 0.0004}{\Hz}.
 
 I due numeri non sono compatibili ma bisogna ricordare il grande numero di assunzioni imprecise fatte per questa simulazione. 
 \`E possibile notare per\`o che i numeri corrispondono almeno come ordine di grandezza segno che non ci sono grandi inefficienze che non abbiamo considerato. 
 Ad esempio, se non avessimo considerato la morte degli elettroni dentro gli scintillatori, come avevamo inizialmente fatto, gli eventi sarebbero decisamente di pi\`u, soprattutto nella configurazione a 6 scintillatori usata nel semestre scorso.
 
+\subsubsection{Coincidenze casuali}
+Guardando dalla simunlazione del punto precedente la percentuale di muoni che non ha prodotto segnale nonstante il trigger \`e possibile stimare la rate attesa di coincidenze casuali dovute a due $mu$ in rapida successione.
+Questa rate e' infatti data da
+
+\begin{equation}
+	R_{fake} = \left(R_\mu\cdot S\cdot\sigma_{cemento}\cdot\varepsilon{apparato}\right)^2\cdot\Delta t
+	\label{eq:fakes}
+\end{equation}
+
+dove $R_\mu$ \`e la rate di muoni cosmici, S \`e la superficie di produzione della simulazione, $\sigma_{cemento}$ \`e la frazione di muoni che passa il cemento, $\varepsilon{apparato}$ \`e la frazione di muoni che si ferma nell'apparato ma non da segnale con l'elettrone e $\Delta t$ \`e la finestra temporale su cui Arietta lavora.
+
+Sostituendo i valori ottenuti si ottiene una rate pari a \SI{4.16e-4}{\Hz}, trascurabile rispetto alla rate di \SI{2.14 +- 0.04e-2}{\Hz} dei dati.
