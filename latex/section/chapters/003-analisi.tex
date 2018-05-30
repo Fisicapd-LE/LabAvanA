@@ -11,11 +11,11 @@ impostati come ohmetri, di fornire una ben definita tensione e di misurare la co
 non si è fatto altro che mettere la PCB al buio (in modo da non rilevare una quantità troppo elevata di fotoni esterni quando si dà una tensione di bias al diodo),
 collegare il picoamperometro al diodo e studiare come varia la corrente al variare della tensione fornita, ottenendo la curva caratteristica del diodo nelle sue due
 sezioni più interessanti: quella dello spegnimento e quella del breakdown; quest'ultima risulta particolarmente interessante in quanto è in questa regione che funzioneranno
-i diodi una volta collegato tutto l'esperimento. Le curve di caratterizzazione si possono vedere nel grafico in Figura~\ref{gr:picoamp} per i due  diodi nella schedina utilizzata (è stata utilizzata la schedina dello scintillatore D).
+i diodi una volta collegato tutto l'esperimento. Le curve di caratterizzazione si possono vedere nei grafici in Figura~\ref{gr:picoamp} per i due  diodi nella schedina utilizzata (è stata utilizzata la schedina dello scintillatore D).
 \inputgraph{picoamp}
 
 In tale grafico si può vedere la corrente al variare della tensione di bias in scala logaritmica: infatti si prevede che nella fase  di breakdown si abbia un aumento esponenziale della corrente al variare della tensione, mentre nella fase di spegnimento in teoria la corrente non varia in funzione della tensione; si \`e perci\`o fittata la parte di breakdown con una retta. La parte di spegnimento \`e stata sempre fittata con una retta in quanto a noi interessa solo l'incrocio tra le due curve e i dati sembravano avere quella forma, probabilmente a causa di latenze nel picoamperometro nella misura di corrente. Si noti dal grafico che per fittare la sezione del breakdown si è fatto un fit solo con i primi dati dopo il breakdown: questo perché poi iniziano a essere rilevanti altri fenomeni che vanno a piegare la curva tensione-corrente, e perciò a rovinare la stima del voltaggio di breakdown.
-Dall'intersezione delle rette di fit si trova il voltaggio di breakdown dei due diodi, che si possono vedere nella Tabella \ref{tab:breakdown_picoamp}
+Dall'intersezione delle rette di fit si trova il voltaggio di breakdown dei due diodi, che si possono vedere nella Tabella \ref{tab:breakdown_picoamp}.
 \inputtab{breakdown_picoamp}
 Si noti che questa misura è principalmente didattica, e non vuole dare un'effettiva utile stima del voltaggio di breakdown per i due diodi ma solamente un'ordine di grandezza
 (infatti uno studio più accurato verrà fatto per questi e i successivi diodi nelle sezioni successive), perciò a questa misura non si associa incertezza.
@@ -89,7 +89,7 @@ Siano le $n$ associate ai rate e le $N$ associate al reale numero, in modo tale 
 \begin{equation}
   n_{13} = n_\mu + n_\mu^\text{OUT} + n_\text{rand}
 \end{equation}
-Nella formula non compare l'efficienza dei rivelatori di trigger in quanto, una volta annullato il termine casuale gli altri termini sono direttamente proporzionali ad essa, consentendoci di semplificarla. Eventuale presenza di questo termine non puo' essere rivelata se non come leggera diminuzione del rate di muoni rivelati.
+Nella formula non compare l'efficienza dei rivelatori di trigger in quanto, una volta annullato il termine casuale gli altri termini sono direttamente proporzionali ad essa, consentendoci di semplificarla. Eventuale presenza di questo termine non pu\`o essere rivelata se non come leggera diminuzione del rate di muoni rivelati.
 
 Si rappresenti ora su un grafico $n_{13}$ al variare della finestra di acquisizione $\tau$. 
 Durante la fase di presa dati, a causa di un errore nel programma per l'impostazione della coincidenza, non si è modificata la finestra di trigger per entrambi i rivelatori, ma solamente quella legata al primo rivelatore, mentre il terzo rivelatore ha mantenuto una finestra di trigger costante fissata a \SI{215}{\ns}. Per raccogliere i dati si è semplicemente acquisito impostando l'oscilloscopio in modo che si fermasse dopo 3000 eventi, e poi si è calcolato $n_{13}$ facendo $3000/t$.
