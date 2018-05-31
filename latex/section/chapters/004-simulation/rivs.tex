@@ -9,12 +9,12 @@ L'effetto del passaggio degli elettroni \`e stato considerato perfettamente equi
 
 Il segnale generato \`e usato come confronto con un arbitraria "soglia", a simulare il modulo di coincidenza (la soglia \`e stata impostata a 3.5 fotoni, come impostato nel reale modulo di coincidenza).
 
-Per i muoni si \`e considerata una probabilit\`a trascurabile di fermarsi all'interno del rivelatore. Questo non rispecchia perfettamente la realt\`a, ma \`e stato considerato che questa probabilit\`a \`e bassa e  non porterebbe a eventi rilevati da Arietta, in quanto gli elettroni difficilmente produrrebbero il segnale adatto. \`E per\`o stato tenuto conto dell'attenuazione in energia durante il passaggio dei muoni.
+Per i muoni si \`e considerata una probabilit\`a trascurabile di fermarsi all'interno del rivelatore. Questo non rispecchia perfettamente la realt\`a, ma \`e stato considerato che questa probabilit\`a \`e bassa e  non porterebbe a eventi rilevati da Arietta, in quanto gli elettroni difficilmente produrrebbero il segnale adatto. \`E per\`o stato tenuto conto dell'attenuazione in energia durante il passaggio dei muoni.\\
 
 Diversa \`e invece la situazione degli elettroni: si \`e infatti visto sperimentalmente che gli elettroni emessi dal decadimento del muone hanno una probabilit\`a non trascurabile di decadere nella plastica dello scintillatore. Per queste particelle si \`e quindi simulato un range, in funzione dell'energia di uscita dall'assorbitore, basandosi su un grafico dal datasheet del rivelatore (\cite{bib:SiPM}), che mostra il range degli elettroni circa proporzionale alla loro energia, con formula
 
 \begin{equation}
-	R(E) \approx \SI{40}{\mm\per\MeV} \cdot E
+	R(E) \approx  E\cdot\left(\SI{40}{\mm\per\MeV}\right)
 	\label{eq:range_elec}
 \end{equation}
 

@@ -39,7 +39,7 @@ rivelatore.
 \item Informazioni varie: dalla simulazione, facendo istogrammi di quantit\`a intermedie, \`e possibile ricavare informazioni sul comportamento delle particelle. Un esempio di ci\`o \`e la distribuzione della morte degli elettroni.
 \item Spettro temporale: data tutta la simulazione fatta, è possibile fare un plot del tempo che intercorre tra il passaggio del muone e quello dell'elettrone, riottenendo
 l'esponenziale del tempo di decadimento, corretto con la rotazione dello spin, ovvero il grafico da cui si potrebbe calcolare il fattore di Land\'e. Questo ci permette di calcolare l'effetto di un campo magnetico non uniforme sulla forma del segnale.
-\item Confronto della rate con quella sperimentale: \`e possibile confrontare la rate calcolata dalla simulazione con quella ottenuta durante la misura della vita media dei muoni. Questo ci permette di verficare che non ci siano inefficienze evidenti che non abbiamo considerato che potrebbero distorcere il risultato.
+\item Confronto del rate con quella sperimentale: \`e possibile confrontare il rate calcolata dalla simulazione con quella ottenuta durante la misura della vita media dei muoni. Questo ci permette di verficare che non ci siano inefficienze evidenti che non abbiamo considerato che potrebbero distorcere il risultato.
 \item Stima delle coincidenze casuali attese durante l'esperimento: data la struttura dell'esperimento \`e possibile che due muoni arrivino abbastanza vicini e triggerino l'apparato in rapida successione. Questo porterebbe a un segnale falso, in quanto non abbiamo modo di distinguere il segnale di un elettrone da quello di un $\mu$.
 \end{itemize}
 
@@ -59,8 +59,12 @@ si ottiene un valore per $\alpha$ di \SI{9.1 \pm 0.3}{\percent}, mentre si ottie
 Dal grafico si pu\`o anche notare come le due distribuzioni siano pressoch\'e identiche fino ad alti t, ed anche l\`a la discrepanza pu\`o essere assimilata ad errori statistici. Non \`e chiaro se questa uguaglianza \`e reale o dovuta a una statistica insufficiente.
 
 \subsubsection{Informazioni varie}
-Chiedendo durante la simulazione di stampare la posizione della morte degli elettroni \`e possibile costruire l'istogramma di grafico in Figura \ref{gr:edeath}. Si pu\`o notare come la maggior parte degli elettroni muoia dentro l'assorbitore, ma che una buona percentuale ($\sim$\SI{11}{\percent}) muore anche negli scintillatori.
-Appare evidente che una consistente percentuale di elettroni muoia dentro gli scintillatori e che quindi l'aggiunta di ulteriori rivelatori in coincidenza, oltre al voluto effetto di ridurre il rumore, tende ad abbassare drammaticamente la rate di coincidenze valide (anche di ordini di grandezza, come evidenziato in una prima presa dati in cui questo effetto era stato trascurato). Questo ha portato ad una rimozione di rivelatori dall'esperimento, ottendendo infine la configurazione definitiva con soli due rivelatori di coincidenza e uno di veto.
+Chiedendo durante la simulazione di stampare la posizione della morte degli elettroni \`e possibile costruire l'istogramma di grafico in Figura \ref{gr:edeath}.
+
+Facendo l'integrale degli elettroni morti prima di poter dare un segnale valido (ovvero nel primo scintillatore di coincidenza e il \SI{43}{\percent} del secondo) si vede che \SI{0.022}{\percent} degli eventi simulati ha prodotto un elettrone che \`e morto dentro gli scintillatori.
+Considerando la percentuale di eventi validi pari \SI{0.055}{\percent} si vede che il \SI{\sim 28}{\percent} degli eventi potenzialmente validi viene fermato dai rivelatori prima di dare un segnale.
+
+Appare evidente che una consistente percentuale di elettroni muoia dentro gli scintillatori e che quindi l'aggiunta di ulteriori rivelatori in coincidenza, oltre al voluto effetto di ridurre il rumore, tende ad abbassare drammaticamente il rate di coincidenze valide (anche di ordini di grandezza, come evidenziato in una prima presa dati in cui questo effetto era stato trascurato). Questo ha portato ad una rimozione di rivelatori dall'esperimento, ottendendo infine la configurazione definitiva con soli due rivelatori di coincidenza e uno di veto.
 
 \inputgraph{edeath}
 
@@ -68,8 +72,8 @@ Appare evidente che una consistente percentuale di elettroni muoia dentro gli sc
 \`E interessante anche analizzare quanto il fattore geometrico contribuisce all'efficienza diversa dal \SI{100}{\percent} calcolata nella Sezione \ref{sec:eff_corr}. Ignorando gli elettroni infatti si pu\`o calcolare l'efficienza con una configurazione del tutto simile a quella utilizzata nella reale misura, ma impostando questa volta l'efficienza intrinseca a 1.
 
 \subsubsection{Stima del rate}
-In una sezione precedente abbiamo calcolato la rate di eventi validi a partire dalle nostre misure della vita media dei muoni. 
-\`E possibile fare una stima basandosi sui risultati della simulazione: data infatti la frazione di eventi simulati che vengono rilevati come validi, uniti ai dati sperimentali sui muoni cosmici presi dal PDG (\cite{bib:Patrignani:2016xqp}), si pu\`o associare un valore per la rate di eventi.
+In una sezione precedente abbiamo calcolato il rate di eventi validi a partire dalle nostre misure della vita media dei muoni. 
+\`E possibile fare una stima basandosi sui risultati della simulazione: data infatti la frazione di eventi simulati che vengono rilevati come validi, uniti ai dati sperimentali sui muoni cosmici presi dal PDG (\cite{bib:Patrignani:2016xqp}), si pu\`o associare un valore per il rate di eventi.
 
 L'output della simulazione usata \`e mostrato nel grafico in Figura \ref{gr:sim_30G}, dove sono stati simulati \SI{3e10}{muoni}.
 \inputgraph{sim_30G}
@@ -78,14 +82,14 @@ La frequenza media di muoni integrata su tutti gli angoli \`e \SI{130}{muoni\per
 La frazione di muoni che passa la schermatura in cemento dell'edificio viene presa dalla simulazione come \SI{0.92}{\percent}.
 
 Data un frazione di eventi validi di \num{5.47e-4}, si arriva a una rate stimata di \SI{0.0162}{\Hz}. 
-Questo numero va confrontato con la rate sperimentale di \SI{0.0214 +- 0.0004}{\Hz}.
+Questo numero va confrontato con il rate sperimentale di \SI{0.0214 +- 0.0004}{\Hz}.
 
 I due numeri non sono compatibili ma bisogna ricordare il grande numero di assunzioni imprecise fatte per questa simulazione. 
 \`E possibile notare per\`o che i numeri corrispondono almeno come ordine di grandezza segno che non ci sono grandi inefficienze che non abbiamo considerato. 
 Ad esempio, se non avessimo considerato la morte degli elettroni dentro gli scintillatori, come avevamo inizialmente fatto, gli eventi sarebbero decisamente di pi\`u, soprattutto nella configurazione a 6 scintillatori usata nel semestre scorso.
 
 \subsubsection{Coincidenze casuali}
-Guardando dalla simunlazione del punto precedente la percentuale di muoni che non ha prodotto segnale nonstante il trigger \`e possibile stimare la rate attesa di coincidenze casuali dovute a due $\mu$ in rapida successione.
+Guardando dalla simunlazione del punto precedente la percentuale di muoni che non ha prodotto segnale nonstante il trigger \`e possibile stimare il rate attesa di coincidenze casuali dovute a due $\mu$ in rapida successione.
 Questo rate \`e infatti dato da
 
 \begin{equation}
@@ -93,6 +97,6 @@ Questo rate \`e infatti dato da
 	\label{eq:fakes}
 \end{equation}
 
-dove $R_\mu$ \`e la rate di muoni cosmici, S \`e la superficie di produzione della simulazione, $\sigma_{cemento}$ \`e la frazione di muoni che passa il cemento, $\varepsilon_{apparato}$ \`e la frazione di muoni che si ferma nell'apparato ma non da segnale con l'elettrone e $\Delta t$ \`e la finestra temporale su cui Arietta lavora.
+dove $R_\mu$ \`e il rate di muoni cosmici, S \`e la superficie di produzione della simulazione, $\sigma_{cemento}$ \`e la frazione di muoni che passa il cemento, $\varepsilon_{apparato}$ \`e la frazione di muoni che si ferma nell'apparato ma non da segnale con l'elettrone e $\Delta t$ \`e la finestra temporale su cui Arietta lavora.
 
-Sostituendo i valori ottenuti si ottiene una rate pari a \SI{4.16e-4}{\Hz}, trascurabile rispetto alla rate di \SI{2.14 +- 0.04e-2}{\Hz} dei dati.
+Sostituendo i valori ottenuti si ottiene una rate pari a \SI{4.16e-4}{\Hz}, trascurabile rispetto all rate di \SI{2.14 +- 0.04e-2}{\Hz} dei dati.
