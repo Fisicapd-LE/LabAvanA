@@ -1,1 +1,1 @@
-Plot della simulazione del campo magnetico prodotto dal solenoide sul piano y=0
+Plot della simulazione del campo magnetico prodotto dal solenoide sul piano y=0. Gli assi sono espressi in unit\`a arbitrarie, ovvero la griglia usata durante la simulazione. Questo \`e perch\'e si voleva presentare solo il profilo del campo magnetico. Le proporzioni sono state per\`o mantenute
