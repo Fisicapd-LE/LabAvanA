@@ -1,3 +1,4 @@
-Scintillatore	efficienza
-E	(84.0 $\pm$ 0.7)\%
-F	(82.5 $\pm$ 0.7)\%
+Scintillatore	efficienza con soglia	efficienza senza soglia
+D	~	\SI{100.2 +- 0.6}{\percent}
+E	(84.0 $\pm$ 0.7)\%	~
+F	(82.5 $\pm$ 0.7)\%	~
