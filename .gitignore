@@ -20,3 +20,4 @@ latex/preamble/packages/packages_general.tex
 latex/preamble/packages/packages_lualatex.tex
 latex/preamble/packages/packages_pdflatex.tex
 correction
+**/__pycache__/*

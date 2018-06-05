@@ -26,9 +26,9 @@ Se il muone cosmico viene fermato all'interno dell'assorbitore, esso decadrà do
 come un esponenziale dal tempo caratteristico che viene assunto come noto dalla letteratura. Perciò si considera il muone, fermo, trascorra un tempo che in media è il tempo
 di vita di tale muone, e poi decada emettendo sostanzialmente un elettrone (non sono rilevabili gli altri prodotti del decadimento). La direzione dell'elettrone \`e simulabile a partire dalle caratteristiche del muone. Infatti, come detto in precedenza, la direzione dell'elettrone \`e correlata alla direzione dello spin del muone al momento del decadimento. Per ogni interazione perci\`o \`e stata considerata l'elicit\`a del muone: forward o backward. In entrambi i casi si \`e fatto ruotare lo spin attorno al campo magnetico nel punto di decadimento, per un tempo pari al tempo di decadimento simulato. La direzione dell'elettrone viene poi generata a partire dalla direzione dello spin, usando la formula 
 \begin{equation}
-	P(\theta, x) \propto \left(3 - 2 x + \cos{\theta}\left(1 - 2 x\right)\right)
+	P(\theta, x) \propto \left(3 - 2 x - \cos{\theta}\left(1 - 2 x\right)\right)
 \end{equation}
-dove x \`e la frazione di semimassa del muone disponibile per l'elettrone, e $\theta$ \`e l'angolo tra lo spin del muone e la direzione dell'elettrone. Questo ovviamente coincide con l'usare una descrizione classica e non quantistica dello spin, in cui a ruotare dovrebbero essere solo i valori medi delle tre osservabili quantistiche producendo un analogo risultato.
+dove x \`e la frazione di semimassa del muone disponibile per l'elettrone, e $\theta$ \`e l'angolo tra lo spin del muone e la direzione dell'elettrone (\cite{bib:mudecay}). Questo ovviamente coincide con l'usare una descrizione classica e non quantistica dello spin, in cui a ruotare dovrebbero essere solo i valori medi delle tre osservabili quantistiche producendo un analogo risultato.
 
 \subsection{Output della simulazione}
 Gli output utili della simulazione descritta ai punti precedenti sono numerosi e interessanti:
@@ -61,7 +61,7 @@ Dal grafico si pu\`o anche notare come le due distribuzioni siano pressoch\'e id
 \subsubsection{Informazioni varie}
 Chiedendo durante la simulazione di stampare la posizione della morte degli elettroni \`e possibile costruire l'istogramma di grafico in Figura \ref{gr:edeath}.
 
-Facendo l'integrale degli elettroni morti prima di poter dare un segnale valido (ovvero nel primo scintillatore di coincidenza e il \SI{43}{\percent} del secondo) si vede che \SI{0.022}{\percent} degli eventi simulati ha prodotto un elettrone che \`e morto dentro gli scintillatori.
+Facendo l'integrale degli elettroni morti prima di poter dare un segnale valido (ovvero nel primo scintillatore di coincidenza e il \SI{43}{\percent} del secondo), su una simulazione da \num{1e7} eventi, si vede che \SI{0.022}{\percent} degli eventi simulati ha prodotto un elettrone che \`e morto dentro gli scintillatori.
 Considerando la percentuale di eventi validi pari \SI{0.055}{\percent} si vede che il \SI{\sim 28}{\percent} degli eventi potenzialmente validi viene fermato dai rivelatori prima di dare un segnale.
 
 Appare evidente che una consistente percentuale di elettroni muoia dentro gli scintillatori e che quindi l'aggiunta di ulteriori rivelatori in coincidenza, oltre al voluto effetto di ridurre il rumore, tende ad abbassare drammaticamente il rate di coincidenze valide (anche di ordini di grandezza, come evidenziato in una prima presa dati in cui questo effetto era stato trascurato). Questo ha portato ad una rimozione di rivelatori dall'esperimento, ottendendo infine la configurazione definitiva con soli due rivelatori di coincidenza e uno di veto.
