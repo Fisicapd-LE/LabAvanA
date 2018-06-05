@@ -17,7 +17,16 @@ questo layer si è fatta molta attenzione nel tagliare il foglio della misura co
 accorgimenti sono stati necessari per gli spigoli, dove si è fatto un doppio layer di alluminio che permettesse di chiudere nel miglior modo possibile lo
 scintillatore. Nell'Immagine \ref{img:wrap@a} si può vedere una foto fatta durante la fase di wrapping con alluminio di uno scintillatore, dove si può anche notare la fibra
 ottica. Il wrapping con la carta alluminio è stato fatto lasciando aperta una finestra della dimensione del circuito di lettura in prossimità del punto in cui la fibra
-ottica esce dallo scintillatore.
+ottica esce dallo scintillatore.\\
+
+Fisicamente nel rivelatore viene generata luce di scintillazione dal passaggio del leptone: la luce di scintillazione generata non vien però totalmente raccolta a causa di effetti parassiti:
+\begin{itemize}
+\item assorbimento da parte del wrapping: l'alluminio che ricorpre lo scintillatore non è perfettamente riflettente, ma alcuni fotoni vengono assorbiti e persi
+\item assorbimento da parte della fibra ottica: non tutti i fotoni riescono ad entrare nella fibra ottica, alcuni vengono riflessi
+\item trasmissione fibra ottica: non tutti i fotoni all'interno della fibra ottica riescono a raggiungere il SiPM, alcuni escono
+\item collegamento fibra ottica-SiPM: se la fibra ottica non aderisce perfettamente con il SiPM o a causa di una non adeguata pressione, o a causa di imperfezioni nella superficie d'uscita dalla fibra alcuni fotoni non raggiungono il fotodiodo.
+\item efficienza SiPM: non tutti i fotoni che raggiungono i fotodiodi generano effettivamente una cascata rilevabile
+\end{itemize}
 
 \inputimg{wrap}
 
