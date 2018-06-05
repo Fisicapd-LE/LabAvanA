@@ -1,0 +1,9 @@
+\section{F test}
+L'\textit{F-test} è un test statistico che permette di confrontare due modelli di cui il più semplice sia un caso particolare del più complesso. Per poterlo effettuare è sufficiente calcolare la variabile $F$, funzione della somma dei residui dei due fit, del numero di dati a disposizione e del numero dei parametri per i due modelli. In particolare, se il pedice 1 indica il modello semplice, caso particolare del modello di pedice 2:
+\begin{equation}
+\label{F-test}
+ F = \frac{\frac{\chi^2_1-\chi^2_2}{p_2-p_1}}{\frac{\chi^2_2}{n-p_2}}
+\end{equation}
+calcolata questa variabile, essa va confrontata con la distribuzione di Fischer una volta scelto un \textit{confidence level}, e la funzione di Fischer va presa con parametri dati dai gradi di libertà del numeratore e del denominatore, rispettivamente $p_2-p_1$ ed $n-p_2$.\\
+Referenza di riferimento: \cite{bib:F_test}
+
